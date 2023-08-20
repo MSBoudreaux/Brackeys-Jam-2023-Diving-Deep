@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public PlayerStats myStats;
 
     public float speed;
     public float jumpHeight;
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public GroundCheck groundCheck;
 
+    public Camera myCam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,17 +30,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        moveX = Input.GetAxis("Horizontal");
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            toJump = true;
-        }
-
-        if(moveX != 0 || toJump == true)
-        {
-            Debug.Log("move = " + moveX.ToString() + ", toJump = " + toJump.ToString());
-        }
+        MovementInput();
+        ActionInput();
 
     }
 
@@ -45,6 +39,43 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = groundCheck.gCheck;
         MoveControl();
+    }
+
+    private void MovementInput()
+    {
+        moveX = Input.GetAxis("Horizontal");
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            toJump = true;
+        }
+
+
+        if (moveX != 0 || toJump == true)
+        {
+            Debug.Log("move = " + moveX.ToString() + ", toJump = " + toJump.ToString());
+        }
+    }
+
+    private void ActionInput()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 touchPos = myCam.ScreenToWorldPoint(Input.mousePosition);
+            touchPos.z = 0f;
+            Debug.Log(touchPos.ToString());
+            RaycastHit2D hit2D = Physics2D.Raycast(touchPos, touchPos - rb.transform.position);
+            Debug.Log(hit2D.collider.ToString() + ": " + hit2D.collider.transform.position.ToString());
+
+            if (hit2D.collider.CompareTag("Breakable"))
+            {
+                if ((rb.transform.position - hit2D.collider.transform.position).magnitude <= myStats.range)
+                {
+                    Debug.Log("In range!");
+                }
+                else Debug.Log("Out of range!");
+            }
+        }
     }
 
     private void MoveControl()
@@ -58,4 +89,5 @@ public class PlayerController : MonoBehaviour
             toJump = false;
         }
     }
+
 }

@@ -13,6 +13,7 @@ public class PlayerStats : MonoBehaviour
     public float atkSpeed;
     public float atkDamage;
     public float breakSpeed;
+    public float range;
 
     void Start()
     {
