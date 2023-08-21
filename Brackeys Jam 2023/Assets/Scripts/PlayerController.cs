@@ -20,6 +20,15 @@ public class PlayerController : MonoBehaviour
 
     public Camera myCam;
 
+    public enum myAction
+    {
+        FreeMovement,
+        Jumping, 
+        Attacking
+    }
+
+    private myAction state;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +68,7 @@ public class PlayerController : MonoBehaviour
 
     private void ActionInput()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             Vector3 touchPos = myCam.ScreenToWorldPoint(Input.mousePosition);
             touchPos.z = 0f;
@@ -72,6 +81,7 @@ public class PlayerController : MonoBehaviour
                 if ((rb.transform.position - hit2D.collider.transform.position).magnitude <= myStats.range)
                 {
                     Debug.Log("In range!");
+                    hit2D.collider.GetComponent<BreakTile>().MineDamage(myStats.breakSpeed);
                 }
                 else Debug.Log("Out of range!");
             }

@@ -24,4 +24,9 @@ public class PlayerStats : MonoBehaviour
     {
         
     }
+
+    public void TakeDamage()
+    {
+
+    }
 }

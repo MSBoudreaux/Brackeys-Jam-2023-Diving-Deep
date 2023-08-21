@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class BreakTile : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    public int maxHealth;
+    public float currentHealth;
+
+    public Animator myAnim;
+
+    public void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MineDamage(float incDamage)
     {
-        
+        currentHealth -= incDamage * Time.deltaTime;
+        if (currentHealth <= 0)
+        {
+            DestroyThis();
+        }
     }
+
+    public void InstantDamage(float incDamage)
+    {
+        currentHealth -= incDamage;
+        if (currentHealth <= 0)
+        {
+            DestroyThis();
+        }
+    }
+
+    private void DestroyThis()
+    {
+        Destroy(gameObject);
+    }
+
+
 }
