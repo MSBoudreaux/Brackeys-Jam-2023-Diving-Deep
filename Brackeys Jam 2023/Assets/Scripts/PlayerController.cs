@@ -16,18 +16,26 @@ public class PlayerController : MonoBehaviour
     bool toJump;
 
     public bool isGrounded;
-    public GroundCheck groundCheck;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
 
     public Camera myCam;
 
-    public enum myAction
+    public LayerMask ignoreHitboxLayer;
+
+    //animation data
+    public Animator myAnim;
+    public Transform spriteTransform;
+
+    public enum PlayerState
     {
         FreeMovement,
         Jumping, 
         Attacking
     }
 
-    private myAction state;
+    public PlayerState state;
 
     // Start is called before the first frame update
     void Start()
@@ -38,15 +46,27 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        switch (state)
+        {
+            case PlayerState.FreeMovement:
+                MovementInput();
+                FlipPlayer();
+                ActionInput();
+                return;
 
-        MovementInput();
-        ActionInput();
+            case PlayerState.Jumping:
+                return;
+
+            case PlayerState.Attacking:
+                ActionInput();
+                return;
+        }
 
     }
 
     private void FixedUpdate()
     {
-        isGrounded = groundCheck.gCheck;
+        isGrounded = checkGround();
         MoveControl();
     }
 
@@ -54,7 +74,7 @@ public class PlayerController : MonoBehaviour
     {
         moveX = Input.GetAxis("Horizontal");
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             toJump = true;
         }
@@ -70,11 +90,35 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            state = PlayerState.Attacking;
+
+            //add force to slow player down
+            rb.AddForce(new Vector2(speed * 0 * 100 * Time.deltaTime, 0), ForceMode2D.Force);
+
+            //find object under cursor
+
             Vector3 touchPos = myCam.ScreenToWorldPoint(Input.mousePosition);
             touchPos.z = 0f;
             Debug.Log(touchPos.ToString());
-            RaycastHit2D hit2D = Physics2D.Raycast(touchPos, touchPos - rb.transform.position);
+            RaycastHit2D hit2D = Physics2D.Raycast(touchPos, touchPos - rb.transform.position, myStats.range, ~ignoreHitboxLayer);
             Debug.Log(hit2D.collider.ToString() + ": " + hit2D.collider.transform.position.ToString());
+
+            //flip player to face for attack
+            if (touchPos.x > 0)
+            {
+                Vector3 myScale = spriteTransform.localScale;
+                myScale.x = Mathf.Abs(myScale.x);
+                spriteTransform.localScale = myScale;
+            }
+            else if (touchPos.x < 0)
+            {
+                Vector3 myScale = spriteTransform.localScale;
+                myScale.x = Mathf.Abs(myScale.x) * -1;
+                spriteTransform.localScale = myScale;
+
+            }
+
+            //if breakable and in range, start breaking
 
             if (hit2D.collider.CompareTag("Breakable"))
             {
@@ -85,6 +129,12 @@ public class PlayerController : MonoBehaviour
                 }
                 else Debug.Log("Out of range!");
             }
+
+
+        }
+        else
+        {
+            state = PlayerState.FreeMovement;
         }
     }
 
@@ -98,6 +148,39 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpHeight * 100 * Time.deltaTime), ForceMode2D.Impulse);
             toJump = false;
         }
+    }
+
+    private void FlipPlayer()
+    {
+        if (rb.velocity.x > 0)
+        {
+            Vector3 myScale = spriteTransform.localScale;
+            myScale.x = Mathf.Abs(myScale.x);
+            spriteTransform.localScale = myScale;
+        }
+        else if (rb.velocity.x < 0)
+        {
+            Vector3 myScale = spriteTransform.localScale;
+            myScale.x = Mathf.Abs(myScale.x) * -1;
+            spriteTransform.localScale = myScale;
+
+        }
+    }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+    }
+
+    private bool checkGround()
+    {
+        bool ground = false;
+        return ground;
     }
 
 }
