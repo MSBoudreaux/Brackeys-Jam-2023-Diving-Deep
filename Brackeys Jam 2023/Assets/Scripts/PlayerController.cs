@@ -49,9 +49,13 @@ public class PlayerController : MonoBehaviour
         switch (state)
         {
             case PlayerState.FreeMovement:
+                checkGround();
                 MovementInput();
-                FlipPlayer();
+                FlipPlayer(0);
                 ActionInput();
+
+                myAnim.SetFloat("Speed", rb.velocity.x);
+
                 return;
 
             case PlayerState.Jumping:
@@ -91,9 +95,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             state = PlayerState.Attacking;
+            myAnim.SetBool("Attacking", true);
 
             //add force to slow player down
-            rb.AddForce(new Vector2(speed * 0 * 100 * Time.deltaTime, 0), ForceMode2D.Force);
+            if (isGrounded)
+            {
+                rb.AddForce(new Vector2(0f, -10), ForceMode2D.Force);
+            }
 
             //find object under cursor
 
@@ -103,20 +111,7 @@ public class PlayerController : MonoBehaviour
             RaycastHit2D hit2D = Physics2D.Raycast(touchPos, touchPos - rb.transform.position, myStats.range, ~ignoreHitboxLayer);
             Debug.Log(hit2D.collider.ToString() + ": " + hit2D.collider.transform.position.ToString());
 
-            //flip player to face for attack
-            if (touchPos.x > 0)
-            {
-                Vector3 myScale = spriteTransform.localScale;
-                myScale.x = Mathf.Abs(myScale.x);
-                spriteTransform.localScale = myScale;
-            }
-            else if (touchPos.x < 0)
-            {
-                Vector3 myScale = spriteTransform.localScale;
-                myScale.x = Mathf.Abs(myScale.x) * -1;
-                spriteTransform.localScale = myScale;
-
-            }
+            FlipPlayer(touchPos.x);
 
             //if breakable and in range, start breaking
 
@@ -134,6 +129,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            myAnim.SetBool("Attacking", false);
             state = PlayerState.FreeMovement;
         }
     }
@@ -150,21 +146,41 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FlipPlayer()
+    private void FlipPlayer(float touchPos)
     {
-        if (rb.velocity.x > 0)
+        if (state == PlayerState.FreeMovement)
         {
-            Vector3 myScale = spriteTransform.localScale;
-            myScale.x = Mathf.Abs(myScale.x);
-            spriteTransform.localScale = myScale;
+            if (rb.velocity.x > 0)
+            {
+                Vector3 myScale = spriteTransform.localScale;
+                myScale.x = Mathf.Abs(myScale.x);
+                spriteTransform.localScale = myScale;
+            }
+            else if (rb.velocity.x < 0)
+            {
+                Vector3 myScale = spriteTransform.localScale;
+                myScale.x = Mathf.Abs(myScale.x) * -1;
+                spriteTransform.localScale = myScale;
+            }
         }
-        else if (rb.velocity.x < 0)
+        else if (state == PlayerState.Attacking)
         {
-            Vector3 myScale = spriteTransform.localScale;
-            myScale.x = Mathf.Abs(myScale.x) * -1;
-            spriteTransform.localScale = myScale;
+            //flip player to face for attack
+            if (touchPos > 0)
+            {
+                Vector3 myScale = spriteTransform.localScale;
+                myScale.x = Mathf.Abs(myScale.x);
+                spriteTransform.localScale = myScale;
+            }
+            else if (touchPos < 0)
+            {
+                Vector3 myScale = spriteTransform.localScale;
+                myScale.x = Mathf.Abs(myScale.x) * -1;
+                spriteTransform.localScale = myScale;
 
+            }
         }
+
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -179,7 +195,7 @@ public class PlayerController : MonoBehaviour
 
     private bool checkGround()
     {
-        bool ground = false;
+        bool ground = Physics2D.BoxCast(groundCheck.position, new Vector2(0.16f, 0.11f),0, new Vector2(0f, 0f), 0, groundLayer.value);
         return ground;
     }
 
