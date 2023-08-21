@@ -166,13 +166,13 @@ public class PlayerController : MonoBehaviour
         else if (state == PlayerState.Attacking)
         {
             //flip player to face for attack
-            if (touchPos > 0)
+            if (touchPos > rb.transform.position.x)
             {
                 Vector3 myScale = spriteTransform.localScale;
                 myScale.x = Mathf.Abs(myScale.x);
                 spriteTransform.localScale = myScale;
             }
-            else if (touchPos < 0)
+            else if (touchPos < rb.transform.position.x)
             {
                 Vector3 myScale = spriteTransform.localScale;
                 myScale.x = Mathf.Abs(myScale.x) * -1;

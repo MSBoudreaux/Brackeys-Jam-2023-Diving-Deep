@@ -7,6 +7,7 @@ public class BreakTile : MonoBehaviour
     
     public int maxHealth;
     public float currentHealth;
+    public GameObject carriedItem;
 
     public Animator myAnim;
 

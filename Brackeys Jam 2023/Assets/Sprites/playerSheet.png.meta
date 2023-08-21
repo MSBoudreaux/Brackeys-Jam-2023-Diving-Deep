@@ -314,6 +314,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: playerSheet_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb37c649ae3cdfa42bf50562864cb76f
+      internalID: -365645265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerSheet_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4afa603f37522114cb7da0a79a419c50
+      internalID: 1928002354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerSheet_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c90c86e4d65772438bfa85cbe24b58e
+      internalID: 1027704118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerSheet_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2f462826dda0a842a7992d46d9d2290
+      internalID: -1023190122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -325,12 +409,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      playerSheet_12: 1027704118
+      playerSheet_13: -1023190122
       playerSheet_3: -149888202
       playerSheet_6: 1653989491
       playerSheet_2: 944948026
       playerSheet_9: -1513548615
       playerSheet_7: 715750891
       playerSheet_8: 417067409
+      playerSheet_11: 1928002354
+      playerSheet_10: -365645265
       playerSheet_5: -1761920156
       playerSheet_0: 274496984
       playerSheet_4: 2126138631
