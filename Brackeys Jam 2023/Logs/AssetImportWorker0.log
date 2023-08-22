@@ -15,7 +15,7 @@ C:/Users/matth/Desktop/Unity Projects/BrackeysJam2023/Brackeys-Jam-2023-Diving-D
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49739
+59348
 Successfully changed project path to: C:/Users/matth/Desktop/Unity Projects/BrackeysJam2023/Brackeys-Jam-2023-Diving-Deep/Brackeys Jam 2023
 C:/Users/matth/Desktop/Unity Projects/BrackeysJam2023/Brackeys-Jam-2023-Diving-Deep/Brackeys Jam 2023
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/matth/Desktop/Unity Projects/BrackeysJam2023/Brackeys-Jam-2023-Diving-D
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 121.58 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 160.34 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.9f1 (ad3870b89536)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/Resources/UnitySubsystems
@@ -63,89 +63,89 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56188
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56960
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.011068 seconds.
+Registered in 0.013118 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 120.69 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 142.71 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.758 seconds
+- Completed reload, in  0.995 seconds
 Domain Reload Profiling:
-	ReloadAssembly (758ms)
-		BeginReloadAssembly (80ms)
+	ReloadAssembly (995ms)
+		BeginReloadAssembly (124ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (548ms)
-			LoadAssemblies (77ms)
+		EndReloadAssembly (672ms)
+			LoadAssemblies (120ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (111ms)
+			SetupTypeCache (147ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (27ms)
-			SetupLoadedEditorAssemblies (353ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (412ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (121ms)
+				RefreshPlugins (143ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (172ms)
-				ProcessInitializeOnLoadMethodAttributes (51ms)
+				ProcessInitializeOnLoadAttributes (197ms)
+				ProcessInitializeOnLoadMethodAttributes (60ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.010335 seconds.
+Registered in 0.012305 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\matth\Desktop\Unity Projects\BrackeysJam2023\Brackeys-Jam-2023-Diving-Deep\Brackeys Jam 2023\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\matth\Desktop\Unity Projects\BrackeysJam2023\Brackeys-Jam-2023-Diving-Deep\Brackeys Jam 2023\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 114.73 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 122.34 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.429 seconds
+- Completed reload, in  1.561 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1430ms)
-		BeginReloadAssembly (121ms)
+	ReloadAssembly (1562ms)
+		BeginReloadAssembly (131ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (9ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (1183ms)
-			LoadAssemblies (104ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1280ms)
+			LoadAssemblies (114ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (288ms)
+			SetupTypeCache (341ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (67ms)
-			SetupLoadedEditorAssemblies (665ms)
+			RebuildScriptCaches (77ms)
+			SetupLoadedEditorAssemblies (685ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (5ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (115ms)
-				BeforeProcessingInitializeOnLoad (143ms)
-				ProcessInitializeOnLoadAttributes (293ms)
-				ProcessInitializeOnLoadMethodAttributes (98ms)
-				AfterProcessingInitializeOnLoad (10ms)
+				RefreshPlugins (122ms)
+				BeforeProcessingInitializeOnLoad (147ms)
+				ProcessInitializeOnLoadAttributes (286ms)
+				ProcessInitializeOnLoadMethodAttributes (110ms)
+				AfterProcessingInitializeOnLoad (13ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (7ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.89 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 1.31 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5533 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 58 unused Assets / (1.2 MB). Loaded Objects now: 5969.
 Memory consumption went from 216.3 MB to 215.1 MB.
-Total: 4.018000 ms (FindLiveObjects: 0.438800 ms CreateObjectMapping: 0.513100 ms MarkObjects: 2.575400 ms  DeleteObjects: 0.489700 ms)
+Total: 4.982900 ms (FindLiveObjects: 0.477600 ms CreateObjectMapping: 0.511700 ms MarkObjects: 3.388800 ms  DeleteObjects: 0.603800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -159,233 +159,161 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 10726.962413 seconds.
-  path: Assets/Sprites/levelSpriteSheet.png
-  artifactKey: Guid(731aa01951fb70649a3658685b38fc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/levelSpriteSheet.png using Guid(731aa01951fb70649a3658685b38fc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '28219010acd244644e099e4600852c39') in 0.122900 seconds 
+  Time since last request: 6562.074986 seconds.
+  path: Assets/Prefabs/Level3BreakObj.prefab
+  artifactKey: Guid(1895b47c6ea536b439e97576745b180f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Level3BreakObj.prefab using Guid(1895b47c6ea536b439e97576745b180f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdf4e928a5259bb34bb5b342db723a9a') in 0.282483 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 68.635511 seconds.
-  path: Assets/Sprites/levelSpriteSheet.png
-  artifactKey: Guid(731aa01951fb70649a3658685b38fc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/levelSpriteSheet.png using Guid(731aa01951fb70649a3658685b38fc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e870130e43739e7dd8b5f2c078256a3a') in 0.039613 seconds 
+  Time since last request: 0.000033 seconds.
+  path: Assets/Prefabs/BreakObjTest.prefab
+  artifactKey: Guid(cbd963ed97944bf4096efab7c0c16789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BreakObjTest.prefab using Guid(cbd963ed97944bf4096efab7c0c16789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5d4e2a913f436690a1370d0ec4aa330') in 0.016361 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 15.396979 seconds.
-  path: Assets/Sprites/levelSpriteSheet.png
-  artifactKey: Guid(731aa01951fb70649a3658685b38fc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/levelSpriteSheet.png using Guid(731aa01951fb70649a3658685b38fc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c437d7e97be5da7b1f4764fb1e76762') in 0.038616 seconds 
+  Time since last request: 0.063091 seconds.
+  path: Assets/Sprites/playerSheet.png
+  artifactKey: Guid(c1e7c2fed33678a41bfb058e1155ed01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/playerSheet.png using Guid(c1e7c2fed33678a41bfb058e1155ed01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c183feda3c26f9e6a6314f2d112a3f54') in 0.084423 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009739 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\matth\Desktop\Unity Projects\BrackeysJam2023\Brackeys-Jam-2023-Diving-Deep\Brackeys Jam 2023\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\matth\Desktop\Unity Projects\BrackeysJam2023\Brackeys-Jam-2023-Diving-Deep\Brackeys Jam 2023\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.00 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.501 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1502ms)
+		BeginReloadAssembly (184ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (57ms)
+		EndReloadAssembly (1184ms)
+			LoadAssemblies (123ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (335ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (71ms)
+			SetupLoadedEditorAssemblies (553ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (125ms)
+				ProcessInitializeOnLoadAttributes (285ms)
+				ProcessInitializeOnLoadMethodAttributes (113ms)
+				AfterProcessingInitializeOnLoad (13ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (17ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 3.35 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5424 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 45 unused Assets / (1.2 MB). Loaded Objects now: 6027.
+Memory consumption went from 215.7 MB to 214.6 MB.
+Total: 4.151900 ms (FindLiveObjects: 0.396100 ms CreateObjectMapping: 0.340400 ms MarkObjects: 2.896100 ms  DeleteObjects: 0.518500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011985 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\matth\Desktop\Unity Projects\BrackeysJam2023\Brackeys-Jam-2023-Diving-Deep\Brackeys Jam 2023\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\matth\Desktop\Unity Projects\BrackeysJam2023\Brackeys-Jam-2023-Diving-Deep\Brackeys Jam 2023\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.96 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.438 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1439ms)
+		BeginReloadAssembly (167ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (48ms)
+		EndReloadAssembly (1137ms)
+			LoadAssemblies (121ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (334ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (62ms)
+			SetupLoadedEditorAssemblies (523ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (120ms)
+				ProcessInitializeOnLoadAttributes (274ms)
+				ProcessInitializeOnLoadMethodAttributes (97ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.29 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5425 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 45 unused Assets / (1.2 MB). Loaded Objects now: 6030.
+Memory consumption went from 215.8 MB to 214.6 MB.
+Total: 5.704700 ms (FindLiveObjects: 0.599600 ms CreateObjectMapping: 0.571300 ms MarkObjects: 3.904300 ms  DeleteObjects: 0.628300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 28.255385 seconds.
-  path: Assets/Sprites/levelSpriteSheet.png
-  artifactKey: Guid(731aa01951fb70649a3658685b38fc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/levelSpriteSheet.png using Guid(731aa01951fb70649a3658685b38fc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '86b6e9341a2cac1f4a653bd3dec7db03') in 0.036140 seconds 
+  Time since last request: 534.717760 seconds.
+  path: Assets/Prefabs/Level2BreakObj.prefab
+  artifactKey: Guid(59efec45a04b88b41a078b63dc9520d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Level2BreakObj.prefab using Guid(59efec45a04b88b41a078b63dc9520d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f0ad18e945bb09d0d89aaefdfa6cc38') in 0.209648 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 28.975458 seconds.
-  path: Assets/Sprites/levelSpriteSheet.png
-  artifactKey: Guid(731aa01951fb70649a3658685b38fc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/levelSpriteSheet.png using Guid(731aa01951fb70649a3658685b38fc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9aa40181b3d83f4c958b2586ff08addb') in 0.241704 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 15.325015 seconds.
-  path: Assets/Sprites/levelSpriteSheet.png
-  artifactKey: Guid(731aa01951fb70649a3658685b38fc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sprites/levelSpriteSheet.png using Guid(731aa01951fb70649a3658685b38fc59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0d6f2c42239d3a69b829d80b4f45537') in 0.237518 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 121.460655 seconds.
-  path: Assets/Palette/Game Palette.prefab
-  artifactKey: Guid(f4f9fc300379ed2469e2f42a7bc4320c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/Game Palette.prefab using Guid(f4f9fc300379ed2469e2f42a7bc4320c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eddc00a807b5aea2bb5086bf0ba69fcc') in 0.181191 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.740199 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_0.asset
-  artifactKey: Guid(d8a4059037a855540a1c3a73aebb03b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_0.asset using Guid(d8a4059037a855540a1c3a73aebb03b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9d3d70f95c87f3fc0b2ee74c9a94ae5') in 0.018828 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_7.asset
-  artifactKey: Guid(99ff2e1c679c4e04e95ba0591e244d2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_7.asset using Guid(99ff2e1c679c4e04e95ba0591e244d2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccd8953c87b5be20134feb3f61b74588') in 0.009166 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_32.asset
-  artifactKey: Guid(24506533a4b855b48a9ebd70fdfdcec0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_32.asset using Guid(24506533a4b855b48a9ebd70fdfdcec0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45a6a55ffc908a0b69c4263fd9e35341') in 0.010105 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_47.asset
-  artifactKey: Guid(8c1bc1fb100cde24e85de00912c7d186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_47.asset using Guid(8c1bc1fb100cde24e85de00912c7d186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10783a044133cdbcd9589c51addbd5d6') in 0.008725 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_26.asset
-  artifactKey: Guid(42422271f403bc64e9c4c8803a3fc0df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_26.asset using Guid(42422271f403bc64e9c4c8803a3fc0df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15b8f383b412b3c788ca138ca2a47aad') in 0.011327 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_40.asset
-  artifactKey: Guid(af66380bdc778674cbe3d75a68b46162) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_40.asset using Guid(af66380bdc778674cbe3d75a68b46162) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '571dd02a64ea23a9df2de127b523f5ea') in 0.010053 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_58.asset
-  artifactKey: Guid(dc086623ccee2a24a8091827e8de4a67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_58.asset using Guid(dc086623ccee2a24a8091827e8de4a67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '501abb461d1b548f88ef2c2b243cbf4d') in 0.008950 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_38.asset
-  artifactKey: Guid(2bae4368e5ebfdb4cbad67e363d0f73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_38.asset using Guid(2bae4368e5ebfdb4cbad67e363d0f73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '159f58d871f4d1f9be0826d6ca5de1be') in 0.013360 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_29.asset
-  artifactKey: Guid(45640be4071948040964ac50e434580a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_29.asset using Guid(45640be4071948040964ac50e434580a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2ad294041872dd735ec3d9809321f05') in 0.010867 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_13.asset
-  artifactKey: Guid(9a68b3e91eb830b4c8e4427f59c0b1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_13.asset using Guid(9a68b3e91eb830b4c8e4427f59c0b1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88d852fcdf89a36a52d4ac61f8e0ebf9') in 0.008928 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_45.asset
-  artifactKey: Guid(f37f99dcad7af354ea6165ec0aa65b4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_45.asset using Guid(f37f99dcad7af354ea6165ec0aa65b4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '889b2d8171a99d02d4d59087f5f2e730') in 0.008500 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_54.asset
-  artifactKey: Guid(3cf3e8db180d2a54ab6beb67e90f4a40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_54.asset using Guid(3cf3e8db180d2a54ab6beb67e90f4a40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '260b0dbd99b45287595e3960f92bfb67') in 0.009067 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_48.asset
-  artifactKey: Guid(fc6b3de7a7b7f054090f6c12abfad356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_48.asset using Guid(fc6b3de7a7b7f054090f6c12abfad356) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a1a762f163154714a32da6b7fdfa767') in 0.011526 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_19.asset
-  artifactKey: Guid(855cb7be2af61cf4da02d0474a6cddcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_19.asset using Guid(855cb7be2af61cf4da02d0474a6cddcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00f90277fbe7df28776ac986ac1fd4b6') in 0.009780 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_57.asset
-  artifactKey: Guid(a6627f42cb363b1459bbfcd60912d4f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_57.asset using Guid(a6627f42cb363b1459bbfcd60912d4f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b0a6d22ad43fb0fd26821f4d739624f') in 0.010831 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_12.asset
-  artifactKey: Guid(816cdd2c2f313894eaaf0384686b3f9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_12.asset using Guid(816cdd2c2f313894eaaf0384686b3f9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65b2408f9f590c7ba20dbf26c4b4b333') in 0.010526 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_55.asset
-  artifactKey: Guid(7e85f7548d2d4ab4886b5bad5dd42cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_55.asset using Guid(7e85f7548d2d4ab4886b5bad5dd42cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20078ebff80baaf03942c515f03d0087') in 0.012001 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_42.asset
-  artifactKey: Guid(31e6a70ef4260c74f849128e467ac13c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_42.asset using Guid(31e6a70ef4260c74f849128e467ac13c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50121df273a22a6244189ab6d2234881') in 0.012301 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_34.asset
-  artifactKey: Guid(d4a8a73bbe7f4ed4d9735e6faf11ab97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_34.asset using Guid(d4a8a73bbe7f4ed4d9735e6faf11ab97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fd90381fa49985ced72b6b2dd263efa') in 0.009711 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_20.asset
-  artifactKey: Guid(ddce065ed06bc7d4aa58e4881f65ca5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_20.asset using Guid(ddce065ed06bc7d4aa58e4881f65ca5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47dbdf3c753d2ff520eb50494d4ffd0c') in 0.015808 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_30.asset
-  artifactKey: Guid(9845e0bac2cb45241a09be8952ad78bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_30.asset using Guid(9845e0bac2cb45241a09be8952ad78bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0f3f050ad864fb5f6fd5508d613d04a') in 0.011183 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_46.asset
-  artifactKey: Guid(e134756b2d85d7142afdacdd06f54e45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_46.asset using Guid(e134756b2d85d7142afdacdd06f54e45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fae6e21105950c10bf229ea79ccf730') in 0.011810 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_10.asset
-  artifactKey: Guid(0b02e1658d68f0747b671eb3ad0fe5d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_10.asset using Guid(0b02e1658d68f0747b671eb3ad0fe5d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '51673eb78090de2bcf3565c7a7ef7ff9') in 0.024649 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_16.asset
-  artifactKey: Guid(052c951e1ad7c1c4c9ccc8cd7f942477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_16.asset using Guid(052c951e1ad7c1c4c9ccc8cd7f942477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07ed7159381e11aaedc7519ae2cce4d3') in 0.010265 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_6.asset
-  artifactKey: Guid(6f35163e290b44d4e8688efce7fe2c82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_6.asset using Guid(6f35163e290b44d4e8688efce7fe2c82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3415f1c0da23da9e9fb45b1576bd4d6') in 0.009536 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_56.asset
-  artifactKey: Guid(f38d1055684a66c45a20fff7591ccc51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_56.asset using Guid(f38d1055684a66c45a20fff7591ccc51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19e61dec5a84e95816c8fbbe99b786b2') in 0.008600 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_17.asset
-  artifactKey: Guid(6944348cb77ade74d9f1fa6330447f30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_17.asset using Guid(6944348cb77ade74d9f1fa6330447f30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce5b0e23f421e639696a24b58baf2b08') in 0.009185 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_53.asset
-  artifactKey: Guid(9837b48957d6cfc458191ba947318b73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_53.asset using Guid(9837b48957d6cfc458191ba947318b73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc0c6e36dde312ea1700e5785b11b6f0') in 0.008809 seconds 
+  Time since last request: 0.000061 seconds.
+  path: Assets/Prefabs/Level3BreakObj.prefab
+  artifactKey: Guid(1895b47c6ea536b439e97576745b180f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Level3BreakObj.prefab using Guid(1895b47c6ea536b439e97576745b180f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74e9c9b5d63924516c415b287b325633') in 0.016526 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000035 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_11.asset
-  artifactKey: Guid(9d4e0be87d151c340beb7c68ce2a5735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_11.asset using Guid(9d4e0be87d151c340beb7c68ce2a5735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '741b8a8d2c306dd542f724eb0fcf7f58') in 0.009591 seconds 
+  path: Packages/com.unity.2d.spriteshape/Editor/ObjectMenuCreation/DefaultAssets/Sprite Shapes/Closed Sprite Shape.prefab
+  artifactKey: Guid(c0583b4e855c74b8c82e7b9b5efb5ce9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.spriteshape/Editor/ObjectMenuCreation/DefaultAssets/Sprite Shapes/Closed Sprite Shape.prefab using Guid(c0583b4e855c74b8c82e7b9b5efb5ce9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e88700372e747ba0384169594baf45f') in 0.019957 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_21.asset
-  artifactKey: Guid(f38b61bba6c9fc64684bbd9c83ca775c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_21.asset using Guid(f38b61bba6c9fc64684bbd9c83ca775c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1de157cc415ae380090259d8b2e9530d') in 0.010816 seconds 
+  Time since last request: 0.000058 seconds.
+  path: Assets/Prefabs/Player.prefab
+  artifactKey: Guid(b44ed685e368bf840bc446b1809bf192) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player.prefab using Guid(b44ed685e368bf840bc446b1809bf192) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edc31bb159a1811c24e8b69475f7a02c') in 0.028748 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000024 seconds.
-  path: Assets/Palette/GamePalette/levelSpriteSheet_43.asset
-  artifactKey: Guid(1b1a5431cb026f4419d24b0ecce05a8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Palette/GamePalette/levelSpriteSheet_43.asset using Guid(1b1a5431cb026f4419d24b0ecce05a8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7949fda048df1c7b36ba448b096944fe') in 0.008611 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  path: Assets/Prefabs/BreakObjTest.prefab
+  artifactKey: Guid(cbd963ed97944bf4096efab7c0c16789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/BreakObjTest.prefab using Guid(cbd963ed97944bf4096efab7c0c16789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cb03d02621106a199c9b85a194149c4') in 0.015593 seconds 
