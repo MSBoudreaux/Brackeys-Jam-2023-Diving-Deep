@@ -10,10 +10,27 @@ public class BreakTile : MonoBehaviour
     public GameObject carriedItem;
 
     public Animator myAnim;
+    public float breakThreshold;
 
-    public void Start()
+
+    private void Start()
     {
+        myAnim = GetComponent<Animator>();
         currentHealth = maxHealth;
+        breakThreshold = maxHealth - 1;
+    }
+    private void Update()
+    {
+        if(Mathf.Round(currentHealth) < maxHealth)
+        {
+            myAnim.SetTrigger("DisplayDamage");
+        }
+
+        if(currentHealth <= breakThreshold)
+        {
+            breakThreshold--;
+            myAnim.SetTrigger("Damage");
+        }
     }
 
     public void MineDamage(float incDamage)
@@ -36,6 +53,13 @@ public class BreakTile : MonoBehaviour
 
     private void DestroyThis()
     {
+        myAnim.SetTrigger("Kill");
+        StartCoroutine(waitKill(0.7f));
+    }
+
+    private IEnumerator waitKill(float time)
+    {
+        yield return new WaitForSeconds(time);
         Destroy(gameObject);
     }
 
