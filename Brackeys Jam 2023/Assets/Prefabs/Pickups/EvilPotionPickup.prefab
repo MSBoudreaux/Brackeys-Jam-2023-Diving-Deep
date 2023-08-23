@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1364072717572115574}
   - component: {fileID: 1400991919311062868}
   - component: {fileID: -8158870754079619544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EvilPotionPickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}

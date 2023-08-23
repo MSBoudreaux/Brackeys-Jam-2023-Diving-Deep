@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7129210922258874967}
   - component: {fileID: 7165070727364331893}
   - component: {fileID: -7428579303203497315}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmlPotionPickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}

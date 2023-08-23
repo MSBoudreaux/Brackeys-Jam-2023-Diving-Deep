@@ -650,6 +650,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: playerSheet_26
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c451ac214aa38a46a6b3b99bcce9fed
+      internalID: 493342563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerSheet_27
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d6ed56ff2a6d74191fc2ecbd561b9f
+      internalID: -782755015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerSheet_28
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6118990e30dab13408dde6f564ef7625
+      internalID: -1963432733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -679,6 +742,8 @@ TextureImporter:
       playerSheet_11: 1928002354
       playerSheet_21: -1094325018
       playerSheet_20: 1030927240
+      playerSheet_28: -1963432733
+      playerSheet_27: -782755015
       playerSheet_10: -365645265
       playerSheet_5: -1761920156
       playerSheet_0: 274496984
@@ -687,6 +752,7 @@ TextureImporter:
       playerSheet_1: 805504773
       playerSheet_17: -1885767103
       playerSheet_23: -1602232887
+      playerSheet_26: 493342563
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

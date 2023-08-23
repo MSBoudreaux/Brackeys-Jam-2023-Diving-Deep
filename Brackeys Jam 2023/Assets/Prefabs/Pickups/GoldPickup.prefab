@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6088518223008590499}
   - component: {fileID: 6188431057241629057}
   - component: {fileID: -1907665247949721846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GoldPickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}

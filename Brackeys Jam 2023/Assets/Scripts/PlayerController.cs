@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public Camera myCam;
 
     public LayerMask ignoreHitboxLayer;
+    public float hitstunMulti;
 
     //animation data
     public Animator myAnim;
@@ -31,7 +32,9 @@ public class PlayerController : MonoBehaviour
     {
         FreeMovement,
         Jumping, 
-        Attacking
+        Attacking,
+        Hitstun,
+        Dead
     }
 
     public PlayerState state;
@@ -149,13 +152,13 @@ public class PlayerController : MonoBehaviour
     {
         if (state == PlayerState.FreeMovement)
         {
-            if (rb.velocity.x > 0)
+            if (rb.velocity.x > 0.1)
             {
                 Vector3 myScale = spriteTransform.localScale;
                 myScale.x = Mathf.Abs(myScale.x);
                 spriteTransform.localScale = myScale;
             }
-            else if (rb.velocity.x < 0)
+            else if (rb.velocity.x < -0.1)
             {
                 Vector3 myScale = spriteTransform.localScale;
                 myScale.x = Mathf.Abs(myScale.x) * -1;
@@ -191,6 +194,28 @@ public class PlayerController : MonoBehaviour
             myStats.GetPowerup(inPickup.myStat, inPickup.value);
             Destroy(collision.transform.gameObject);
         }
+
+        else if (collision.transform.CompareTag("EnemyAttack") && myStats.isIFrames == false)
+        {
+            Debug.Log("player hit");
+            Transform inHitboxPos = collision.transform.parent.transform;
+            EnemyStats incStats = collision.transform.GetComponentInParent<EnemyStats>();
+
+            state = PlayerState.Hitstun;
+            myAnim.SetTrigger("Damage");
+            StopAllCoroutines();
+            StartCoroutine(waitForHitstun(0.75f));
+            rb.AddForce(new Vector2(-(inHitboxPos.position.x - transform.position.x), -(inHitboxPos.position.y - transform.position.y) * 15).normalized * hitstunMulti, ForceMode2D.Impulse);
+            Debug.Log("incoming damage" + incStats.damage.ToString());
+            myStats.addHealth(-incStats.damage);
+
+        }
+    }
+
+    IEnumerator waitForHitstun(float time)
+    {
+        yield return new WaitForSeconds(time);
+        state = PlayerState.FreeMovement;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

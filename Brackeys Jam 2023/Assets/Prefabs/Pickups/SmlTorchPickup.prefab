@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 896265510936911690}
   - component: {fileID: 1004116801910379624}
   - component: {fileID: 7867904276436562398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmlTorchPickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}

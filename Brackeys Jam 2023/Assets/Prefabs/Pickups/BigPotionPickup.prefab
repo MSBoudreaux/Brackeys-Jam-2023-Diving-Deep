@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8455696565989824577}
   - component: {fileID: 8414924675542078307}
   - component: {fileID: 2657456200611358631}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BigPotionPickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5322249466053750188}
   - component: {fileID: 5207031855197447822}
   - component: {fileID: 7523980163030168964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LrgTorchPickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}

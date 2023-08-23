@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5499837526281779621}
   - component: {fileID: 5605894418606977671}
   - component: {fileID: -1707162323675510403}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AtkBeerPickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}

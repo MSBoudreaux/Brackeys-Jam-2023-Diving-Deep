@@ -13,10 +13,10 @@ public class PlayerStats : MonoBehaviour
     public float score;
 
     //action stats: attack , damage, mining speed, light
-    public float atkDamage;
-    public float breakSpeed;
-    public float range;
-    public float lightRange;
+    public int atkDamage;
+    public int breakSpeed;
+    public int range;
+    public int lightRange;
     public bool isRage;
 
     public Animator stateAnim;

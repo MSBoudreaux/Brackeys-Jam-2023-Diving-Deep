@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2443126680377669106}
   - component: {fileID: 2339831761262493392}
   - component: {fileID: -6003384418789135322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RageBeerPickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}

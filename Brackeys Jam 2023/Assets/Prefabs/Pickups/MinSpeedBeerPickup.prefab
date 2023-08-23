@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7079197431169534785}
   - component: {fileID: 7179062011412430947}
   - component: {fileID: 8523161600699821817}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MinSpeedBeerPickup
   m_TagString: Pickup
   m_Icon: {fileID: 0}

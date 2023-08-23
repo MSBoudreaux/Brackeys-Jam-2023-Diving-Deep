@@ -181,6 +181,7 @@ MonoBehaviour:
   ignoreHitboxLayer:
     serializedVersion: 2
     m_Bits: 64
+  hitstunMulti: 3
   myAnim: {fileID: 1870391546840889216}
   spriteTransform: {fileID: 8234023340829268369}
   state: 0
@@ -291,7 +292,7 @@ GameObject:
   - component: {fileID: 1559906823312119055}
   m_Layer: 6
   m_Name: AtkBox
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,11 +422,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8234023340829268369}
   - component: {fileID: 1245270212138591310}
-  - component: {fileID: 9114066838640833126}
   - component: {fileID: 4272547458031579257}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,27 +501,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &9114066838640833126
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7946081207954425601}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!60 &4272547458031579257
 PolygonCollider2D:
   m_ObjectHideFlags: 0
