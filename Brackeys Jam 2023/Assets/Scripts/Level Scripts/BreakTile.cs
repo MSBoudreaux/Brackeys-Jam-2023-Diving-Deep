@@ -8,6 +8,7 @@ public class BreakTile : MonoBehaviour
     public int maxHealth;
     public float currentHealth;
     public GameObject carriedItem;
+    public Transform spawnPoint;
 
     public Animator myAnim;
     public float breakThreshold;
@@ -60,6 +61,12 @@ public class BreakTile : MonoBehaviour
     private IEnumerator waitKill(float time)
     {
         yield return new WaitForSeconds(time);
+        if (carriedItem != null)
+        {
+            GameObject droppedItem = Instantiate(carriedItem, new Vector3(spawnPoint.position.x, spawnPoint.position.y), transform.rotation);
+            droppedItem.transform.SetParent(null);
+
+        }
         Destroy(gameObject);
     }
 

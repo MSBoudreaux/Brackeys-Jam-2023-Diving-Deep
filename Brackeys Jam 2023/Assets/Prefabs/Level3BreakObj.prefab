@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f355b99420bc548902e30690409874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 1
   currentHealth: 0
   carriedItem: {fileID: 0}
   myAnim: {fileID: 0}

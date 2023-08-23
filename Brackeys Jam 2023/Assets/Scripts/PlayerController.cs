@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
-
     public Camera myCam;
 
     public LayerMask ignoreHitboxLayer;
@@ -86,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
         if (moveX != 0 || toJump == true)
         {
-            Debug.Log("move = " + moveX.ToString() + ", toJump = " + toJump.ToString());
+            //Debug.Log("move = " + moveX.ToString() + ", toJump = " + toJump.ToString());
         }
     }
 
@@ -107,9 +106,9 @@ public class PlayerController : MonoBehaviour
 
             Vector3 touchPos = myCam.ScreenToWorldPoint(Input.mousePosition);
             touchPos.z = 0f;
-            Debug.Log(touchPos.ToString());
+            //Debug.Log(touchPos.ToString());
             RaycastHit2D hit2D = Physics2D.Raycast(touchPos, touchPos - rb.transform.position, myStats.range, ~ignoreHitboxLayer);
-            Debug.Log(hit2D.collider.ToString() + ": " + hit2D.collider.transform.position.ToString());
+            //Debug.Log(hit2D.collider.ToString() + ": " + hit2D.collider.transform.position.ToString());
 
             FlipPlayer(touchPos.x);
 
@@ -119,10 +118,10 @@ public class PlayerController : MonoBehaviour
             {
                 if ((rb.transform.position - hit2D.collider.transform.position).magnitude <= myStats.range)
                 {
-                    Debug.Log("In range!");
+                    //Debug.Log("In range!");
                     hit2D.collider.GetComponent<BreakTile>().MineDamage(myStats.breakSpeed);
                 }
-                else Debug.Log("Out of range!");
+                //else Debug.Log("Out of range!");
             }
 
 
@@ -183,9 +182,15 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.transform.CompareTag("Pickup"))
+        {
+            Debug.Log("picking up!");
+            PickupItem inPickup = collision.transform.GetComponent<PickupItem>();
+            myStats.GetPowerup(inPickup.myStat, inPickup.value);
+            Destroy(collision.transform.gameObject);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

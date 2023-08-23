@@ -129,7 +129,8 @@ GameObject:
   - component: {fileID: 2953779473116056878}
   - component: {fileID: 3309801000422657666}
   - component: {fileID: 689543995}
-  - component: {fileID: 8420809120802789186}
+  - component: {fileID: 1870391546840889216}
+  - component: {fileID: 2142735135878938067}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21bc623d35ec95f4282497d8dd130409, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1615676090681406463}
+  rb: {fileID: 2142735135878938067}
   myStats: {fileID: 689543995}
   speed: 10
   jumpHeight: 6
@@ -180,7 +181,7 @@ MonoBehaviour:
   ignoreHitboxLayer:
     serializedVersion: 2
     m_Bits: 64
-  myAnim: {fileID: 8420809120802789186}
+  myAnim: {fileID: 1870391546840889216}
   spriteTransform: {fileID: 8234023340829268369}
   state: 0
 --- !u!114 &689543995
@@ -197,12 +198,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 10
+  isIFrames: 0
+  iFrameTime: 2
   score: 0
-  atkSpeed: 0
-  atkDamage: 0
+  atkDamage: 1
   breakSpeed: 1
   range: 2
---- !u!95 &8420809120802789186
+  lightRange: 3
+  isRage: 0
+  stateAnim: {fileID: 1870391546840889216}
+--- !u!95 &1870391546840889216
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -222,6 +227,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &2142735135878938067
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2953779473116057297}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 3
+  m_AngularDrag: 0.05
+  m_GravityScale: 2
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &5928612862149033694
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,9 +421,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8234023340829268369}
   - component: {fileID: 1245270212138591310}
-  - component: {fileID: 1615676090681406463}
-  - component: {fileID: 546285985}
-  - component: {fileID: 3035025941623624856}
+  - component: {fileID: 9114066838640833126}
+  - component: {fileID: 4272547458031579257}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -413,7 +438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7946081207954425601}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.095, y: -0.03, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -476,7 +501,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &1615676090681406463
+--- !u!50 &9114066838640833126
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -489,16 +514,16 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 3
+  m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &546285985
-BoxCollider2D:
+  m_Constraints: 0
+--- !u!60 &4272547458031579257
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -510,7 +535,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.005181052, y: -0.020695131}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -520,22 +545,18 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.14763711, y: 0.19694006}
-  m_EdgeRadius: 0
---- !u!70 &3035025941623624856
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7946081207954425601}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.005, y: -0.11}
-  m_Size: {x: 0.15, y: 0.1}
-  m_Direction: 1
+  m_Points:
+    m_Paths:
+    - - {x: 0.0044750506, y: 0.0502834}
+      - {x: -0.06931693, y: 0.04211923}
+      - {x: -0.066016465, y: -0.13688728}
+      - {x: -0.06387439, y: -0.14600846}
+      - {x: -0.062340334, y: -0.14971453}
+      - {x: -0.05565378, y: -0.15753476}
+      - {x: -0.050060853, y: -0.16007479}
+      - {x: 0.059855133, y: -0.16}
+      - {x: 0.06581729, y: -0.15867767}
+      - {x: 0.07045534, y: -0.15637831}
+      - {x: 0.07454905, y: -0.15169148}
+      - {x: 0.07645392, y: -0.14631912}
+      - {x: 0.0793462, y: 0.041238956}
