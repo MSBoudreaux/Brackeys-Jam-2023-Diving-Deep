@@ -32,12 +32,32 @@ public class GroundEnemy : MonoBehaviour
     public enemyState myState;
     public Animator myAnim;
 
+    public AudioSource myAudio;
+    public AudioClip[] myClips;
+    public bool waitIdleSound;
+    float idleDelay;
+    public bool waitExplosion;
+    float explosionDelay = 0.2f;
+
+    public Coroutine actionCoroutine;
+
     void Start()
     {
         myStats = GetComponent<EnemyStats>();
         myAnim = GetComponent<Animator>();
         myRB = GetComponent<Rigidbody2D>();
+        myAudio = GetComponent<AudioSource>();
         playerLocation = FindObjectOfType<PlayerStats>().transform;
+    }
+
+    private void Update()
+    {
+        if (!waitIdleSound)
+        {
+            idleDelay = Random.Range(5f, 7f);
+            waitIdleSound = true;
+            StartCoroutine(waitIdle(idleDelay));
+        }
     }
 
     // Update is called once per frame
@@ -61,6 +81,7 @@ public class GroundEnemy : MonoBehaviour
                 if(hasLOS == true)
                 {
                     myState = enemyState.Movement;
+                    PlayClip(0);
                     myAnim.SetTrigger("WakeUp");
                 }
                 return;
@@ -74,7 +95,8 @@ public class GroundEnemy : MonoBehaviour
                 {
                     myState = enemyState.Attack;
                     myAnim.SetTrigger("Attack");
-                    StartCoroutine(waitForAttack(1.35f));
+                    PlayClip(0);
+                    actionCoroutine = StartCoroutine(waitForAttack(1.35f));
                 }
                 return;
             case enemyState.Attack:
@@ -82,6 +104,12 @@ public class GroundEnemy : MonoBehaviour
             case enemyState.Hitstun:
                 return;
             case enemyState.Death:
+                if (!waitExplosion)
+                {
+                    waitExplosion = true;
+                    PlayClip(3);
+                    StartCoroutine(waitExplode(explosionDelay));
+                }
                 return;
 
         }
@@ -122,11 +150,17 @@ public class GroundEnemy : MonoBehaviour
         
         RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(playerLocation.position.x - transform.position.x, playerLocation.position.y - transform.position.y), 10f, ~ignoreEnemyLayer);
         //Debug.Log(hit.transform.name);
-        if (hit.transform.name == "Player" )
+        if (hit.transform.name == "Player")
         {
             hasLOS = true;
+            myAudio.volume = 1f;
         }
-        else hasLOS = false;
+        else
+        {
+            hasLOS = false;
+            myAudio.volume = 0.5f;
+        }
+
 
         return hasLOS;
     }
@@ -168,8 +202,8 @@ public class GroundEnemy : MonoBehaviour
             PlayerStats incStats = collision.transform.GetComponentInParent<PlayerStats>();
             myState = enemyState.Hitstun;
             myAnim.SetTrigger("TakeDamage");
-            StopAllCoroutines();
-            StartCoroutine(waitForHitstun(1.1f));
+            StopCoroutine(actionCoroutine);
+            actionCoroutine = StartCoroutine(waitForHitstun(1.1f));
 
 
 
@@ -180,6 +214,7 @@ public class GroundEnemy : MonoBehaviour
             }
             else
             {
+                PlayClip(2);
                 myRB.AddForce(new Vector2(playerLocation.position.x - transform.position.x, -(playerLocation.position.y - transform.position.y) * 15).normalized * incStats.atkDamage * -hitstunMulti, ForceMode2D.Impulse);
                 myStats.takeDamage(incStats);
             }
@@ -202,6 +237,26 @@ public class GroundEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Destroy(transform.gameObject);
+    }
+
+    IEnumerator waitIdle(float time)
+    {
+        yield return new WaitForSeconds(time);
+        waitIdleSound = false;
+        PlayClip(1);
+    }
+
+    IEnumerator waitExplode(float time)
+    {
+        yield return new WaitForSeconds(time);
+        waitExplosion = false;
+
+    }
+
+    private void PlayClip(int clipIndex)
+    {
+        AudioClip inClip = myClips[clipIndex];
+        myAudio.PlayOneShot(inClip);
     }
 
     private void OnDrawGizmos()

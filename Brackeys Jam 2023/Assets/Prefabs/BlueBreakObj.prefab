@@ -130,6 +130,11 @@ MonoBehaviour:
   spawnPoint: {fileID: 2695816788744502132}
   myAnim: {fileID: 0}
   breakThreshold: 0
+  myAudio: {fileID: 0}
+  myClips:
+  - {fileID: 8300000, guid: 96fb56ef71a99884191a1370f1aec681, type: 3}
+  - {fileID: 8300000, guid: b9d825c9c32d1184e845ce2c4ab1f4f7, type: 3}
+  - {fileID: 8300000, guid: 2335c35655b164d42b95b5a6fcfff0e1, type: 3}
 --- !u!66 &1145233557647755509
 CompositeCollider2D:
   m_ObjectHideFlags: 0

@@ -7808,6 +7808,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 68082623}
     m_Modifications:
+    - target: {fileID: 300702135751181706, guid: 5880c8eeedb1e394ea19ef841b67f52e, type: 3}
+      propertyPath: carriedItem
+      value: 
+      objectReference: {fileID: 4111253736050052902, guid: bd4184211db893641aef0825a3f13895, type: 3}
     - target: {fileID: 6968374494807276055, guid: 5880c8eeedb1e394ea19ef841b67f52e, type: 3}
       propertyPath: m_RootOrder
       value: 101
@@ -8222,6 +8226,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 970123462787993338, guid: b44ed685e368bf840bc446b1809bf192, type: 3}
+      propertyPath: rolloffMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 970123462787993338, guid: b44ed685e368bf840bc446b1809bf192, type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 970123462787993338, guid: b44ed685e368bf840bc446b1809bf192, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2953779473116056878, guid: b44ed685e368bf840bc446b1809bf192, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8270,10 +8286,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3309801000422657666, guid: b44ed685e368bf840bc446b1809bf192, type: 3}
-      propertyPath: hitstunMulti
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b44ed685e368bf840bc446b1809bf192, type: 3}
 --- !u!1001 &6144984093196279107
@@ -8283,6 +8295,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 665873631734194405, guid: 1ba1d577a395dc644a0f70300d7793ab, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6144984093573349484, guid: 1ba1d577a395dc644a0f70300d7793ab, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -8330,10 +8346,6 @@ PrefabInstance:
     - target: {fileID: 6144984093573349485, guid: 1ba1d577a395dc644a0f70300d7793ab, type: 3}
       propertyPath: m_Name
       value: EnemyTemplate
-      objectReference: {fileID: 0}
-    - target: {fileID: 6144984093573349485, guid: 1ba1d577a395dc644a0f70300d7793ab, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ba1d577a395dc644a0f70300d7793ab, type: 3}

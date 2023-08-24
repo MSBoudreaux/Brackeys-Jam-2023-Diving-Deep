@@ -28,6 +28,15 @@ public class PlayerController : MonoBehaviour
     public Animator myAnim;
     public Transform spriteTransform;
 
+    //audio data
+    public AudioSource myAudio;
+    public AudioClip[] myClips;
+
+    public bool waitAmbience;
+    public bool whichAmbience;
+    public float ambienceDelay;
+
+
     public enum PlayerState
     {
         FreeMovement,
@@ -48,6 +57,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (!waitAmbience)
+        {
+            ambienceDelay = Random.Range(15f, 20f);
+            waitAmbience = true;
+            StartCoroutine(ambienceTimer(ambienceDelay));
+        }
+
         switch (state)
         {
             case PlayerState.FreeMovement:
@@ -152,6 +169,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(new Vector2(0, jumpHeight * 100 * Time.deltaTime), ForceMode2D.Impulse);
             toJump = false;
+            PlayClip(0);
         }
     }
 
@@ -198,6 +216,22 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("picking up!");
             PickupItem inPickup = collision.transform.GetComponent<PickupItem>();
+            if(inPickup.myStat == PickupItem.PickupBoost.AngyMode)
+            {
+                PlayClip(9);
+            }
+            else if(inPickup.myStat == PickupItem.PickupBoost.Health && inPickup.value < 0)
+            {
+                PlayClip(1);
+            }
+            else if(inPickup.myStat == PickupItem.PickupBoost.Score)
+            {
+                PlayClip(7);
+            }
+            else
+            {
+                PlayClip(8);
+            }
             myStats.GetPowerup(inPickup.myStat, inPickup.value);
             Destroy(collision.transform.gameObject);
         }
@@ -207,6 +241,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("player hit");
             Transform inHitboxPos = collision.transform.parent.transform;
             EnemyStats incStats = collision.transform.GetComponentInParent<EnemyStats>();
+
+            PlayClip(1);
 
             state = PlayerState.Hitstun;
             myAnim.SetTrigger("Damage");
@@ -234,6 +270,30 @@ public class PlayerController : MonoBehaviour
     {
         bool ground = Physics2D.BoxCast(groundCheck.position, new Vector2(0.16f, 0.11f),0, new Vector2(0f, 0f), 0, groundLayer.value);
         return ground;
+    }
+
+    private void PlayClip(int clipIndex)
+    {
+        AudioClip inClip = myClips[clipIndex];
+        myAudio.PlayOneShot(inClip);
+    }
+
+    IEnumerator ambienceTimer(float time)
+    {
+        yield return new WaitForSeconds(time);
+        whichAmbience = !whichAmbience;
+        waitAmbience = false;
+
+        if (whichAmbience)
+        {
+            PlayClip(5);
+        }
+        else
+        {
+            PlayClip(6);
+        }
+
+
     }
 
 }

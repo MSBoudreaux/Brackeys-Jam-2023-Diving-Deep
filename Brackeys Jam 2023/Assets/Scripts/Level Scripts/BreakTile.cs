@@ -14,10 +14,18 @@ public class BreakTile : MonoBehaviour
     public Animator myAnim;
     public float breakThreshold;
 
+    public AudioSource myAudio;
+    public AudioClip[] myClips;
+    float bounceWait = 0.517f;
+    bool isWaitingBounce;
+    bool isBreaking = false;
+    bool isFirstBreak = true;
+
 
     private void Start()
     {
         myAnim = GetComponent<Animator>();
+        myAudio = FindObjectOfType<PlayerController>().myAudio;
         currentHealth = maxHealth;
         breakThreshold = maxHealth - 1;
     }
@@ -25,6 +33,11 @@ public class BreakTile : MonoBehaviour
     {
         if(Mathf.Round(currentHealth) < maxHealth)
         {
+            if (isFirstBreak)
+            {
+                PlayClip(0);
+                isFirstBreak = false;
+            }
             myAnim.SetTrigger("DisplayDamage");
         }
 
@@ -32,6 +45,7 @@ public class BreakTile : MonoBehaviour
         {
             breakThreshold--;
             myAnim.SetTrigger("Damage");
+            PlayClip(0);
         }
     }
 
@@ -44,6 +58,13 @@ public class BreakTile : MonoBehaviour
             {
                 DestroyThis();
             }
+        }
+
+
+        else if (!isWaitingBounce)
+        {
+            StartCoroutine(PlayBounceNoise(bounceWait));
+            isWaitingBounce = true;
         }
     }
 
@@ -58,8 +79,19 @@ public class BreakTile : MonoBehaviour
 
     private void DestroyThis()
     {
+        if (!isBreaking)
+        {
+            PlayClip(1);
+            isBreaking = true;
+        }
         myAnim.SetTrigger("Kill");
         StartCoroutine(waitKill(0.7f));
+    }
+
+    private void PlayClip(int clipIndex)
+    {
+        AudioClip inClip = myClips[clipIndex];
+        myAudio.PlayOneShot(inClip);
     }
 
     private IEnumerator waitKill(float time)
@@ -72,6 +104,13 @@ public class BreakTile : MonoBehaviour
 
         }
         Destroy(gameObject);
+    }
+
+    IEnumerator PlayBounceNoise(float time)
+    {
+        yield return new WaitForSeconds(time);
+        PlayClip(2);
+        isWaitingBounce = false;
     }
 
 
