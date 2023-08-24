@@ -68,7 +68,7 @@ public class GroundEnemy : MonoBehaviour
         if(myStats.getHealth() == 0)
         {
             myState = enemyState.Death;
-            StartCoroutine(waitDie(1f));
+            StartCoroutine(waitDie(1.5f));
             myAnim.SetTrigger("Die");
         }
 

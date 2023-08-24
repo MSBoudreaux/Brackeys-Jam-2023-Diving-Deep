@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.Rendering.Universal;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -20,18 +23,40 @@ public class PlayerStats : MonoBehaviour
     public int breakLevel;
     public bool isRage;
 
-
     public Animator stateAnim;
+
+    public Light2D myLight;
+
+    //update UI
+    public Slider hpBar;
+    public TextMeshProUGUI HPnumber;
+    public TextMeshProUGUI atkNumber;
+    public TextMeshProUGUI speedNumber;
+    public TextMeshProUGUI rangeNumber;
+    public TextMeshProUGUI lightNumber;
+    public TextMeshProUGUI digLevel;
+    public TextMeshProUGUI rageTimer;
 
     void Start()
     {
-        
     }
 
     void Update()
     {
         stateAnim.SetBool("IsIFrames", isIFrames);
         stateAnim.SetBool("IsRageMode", isRage);
+
+        myLight.pointLightInnerRadius = lightRange;
+        myLight.pointLightOuterRadius = lightRange + 1f;
+
+        //update UI
+        hpBar.value = currentHealth;
+        HPnumber.text = currentHealth.ToString();
+        atkNumber.text = atkDamage.ToString();
+        speedNumber.text = breakSpeed.ToString();
+        rangeNumber.text = range.ToString();
+        lightNumber.text = (lightRange - 1).ToString();
+        digLevel.text = breakLevel.ToString();
     }
 
     public void addHealth(int inHP)
@@ -79,7 +104,17 @@ public class PlayerStats : MonoBehaviour
                 breakSpeed += inValue;
                 return;
             case PickupItem.PickupBoost.Light:
-                lightRange += inValue;
+                lightRange = inValue;
+
+                /*if(lightRange == 3)
+                {
+                    myLight.color = new Color(255, 199,  146, 255);
+                }
+                if(lightRange == 4)
+                {
+                    myLight.color = new Color(84, 144, 173, 255);
+                }*/
+
                 return;
             case PickupItem.PickupBoost.Score:
                 score += inValue;
