@@ -45,7 +45,7 @@ public class GroundEnemy : MonoBehaviour
     {
 
 
-        if(myStats.currentHealth == 0)
+        if(myStats.getHealth() == 0)
         {
             myState = enemyState.Death;
             StartCoroutine(waitDie(1f));
@@ -170,8 +170,19 @@ public class GroundEnemy : MonoBehaviour
             myAnim.SetTrigger("TakeDamage");
             StopAllCoroutines();
             StartCoroutine(waitForHitstun(1.1f));
-            myRB.AddForce(new Vector2(playerLocation.position.x - transform.position.x, -(playerLocation.position.y - transform.position.y) * 15).normalized * incStats.atkDamage * -hitstunMulti, ForceMode2D.Impulse);
-            myStats.takeDamage(incStats);
+
+
+
+            if (incStats.isRage)
+            {
+                myRB.AddForce(new Vector2(playerLocation.position.x - transform.position.x, -(playerLocation.position.y - transform.position.y) * 15).normalized * 5 * -hitstunMulti, ForceMode2D.Impulse);
+                myStats.setHealth(0);
+            }
+            else
+            {
+                myRB.AddForce(new Vector2(playerLocation.position.x - transform.position.x, -(playerLocation.position.y - transform.position.y) * 15).normalized * incStats.atkDamage * -hitstunMulti, ForceMode2D.Impulse);
+                myStats.takeDamage(incStats);
+            }
         }
     }
 

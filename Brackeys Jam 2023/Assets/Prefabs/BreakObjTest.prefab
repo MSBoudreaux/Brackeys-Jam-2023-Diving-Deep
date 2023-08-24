@@ -124,7 +124,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   currentHealth: 0
+  breakLevel: 1
   carriedItem: {fileID: 0}
+  spawnPoint: {fileID: 0}
   myAnim: {fileID: 0}
   breakThreshold: 0
 --- !u!66 &3756095261516564454

@@ -156,6 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   currentHealth: 0
+  breakLevel: 1
   carriedItem: {fileID: 2387894590172224544, guid: 5687c160ceee5cc46b02d5381f7e1385, type: 3}
   spawnPoint: {fileID: 2759393787823343800}
   myAnim: {fileID: 0}

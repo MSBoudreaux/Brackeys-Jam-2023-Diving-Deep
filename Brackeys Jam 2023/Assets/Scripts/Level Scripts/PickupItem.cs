@@ -13,6 +13,7 @@ public class PickupItem : MonoBehaviour
         MiningSpeed,
         Light,
         Score,
+        PickaxeUp,
         AngyMode
     }
 

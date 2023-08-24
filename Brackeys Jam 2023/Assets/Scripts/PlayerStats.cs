@@ -17,7 +17,9 @@ public class PlayerStats : MonoBehaviour
     public int breakSpeed;
     public int range;
     public int lightRange;
+    public int breakLevel;
     public bool isRage;
+
 
     public Animator stateAnim;
 
@@ -81,6 +83,9 @@ public class PlayerStats : MonoBehaviour
                 return;
             case PickupItem.PickupBoost.Score:
                 score += inValue;
+                return;
+            case PickupItem.PickupBoost.PickaxeUp:
+                breakLevel += inValue;
                 return;
             case PickupItem.PickupBoost.AngyMode:
                 isRage = true;

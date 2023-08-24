@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
                 if ((rb.transform.position - hit2D.collider.transform.position).magnitude <= myStats.range)
                 {
                     //Debug.Log("In range!");
-                    hit2D.collider.GetComponent<BreakTile>().MineDamage(myStats.breakSpeed);
+                    hit2D.collider.GetComponent<BreakTile>().MineDamage(myStats.breakSpeed, myStats.breakLevel);
                 }
                 //else Debug.Log("Out of range!");
             }
@@ -138,8 +138,15 @@ public class PlayerController : MonoBehaviour
 
     private void MoveControl()
     {
+        float finalSpeed;
+        if (!isGrounded)
+        {
+            finalSpeed = speed / 2;
+        }
+        else finalSpeed = speed;
 
-        rb.AddForce(new Vector2(speed * moveX * 100 * Time.deltaTime, 0), ForceMode2D.Force);
+
+        rb.AddForce(new Vector2(finalSpeed * moveX * 100 * Time.deltaTime, 0), ForceMode2D.Force);
 
         if (toJump && isGrounded)
         {

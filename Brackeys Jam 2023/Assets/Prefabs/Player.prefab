@@ -206,6 +206,7 @@ MonoBehaviour:
   breakSpeed: 1
   range: 2
   lightRange: 3
+  breakLevel: 1
   isRage: 0
   stateAnim: {fileID: 1870391546840889216}
 --- !u!95 &1870391546840889216

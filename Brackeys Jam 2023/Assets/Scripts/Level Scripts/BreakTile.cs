@@ -7,6 +7,7 @@ public class BreakTile : MonoBehaviour
     
     public int maxHealth;
     public float currentHealth;
+    public int breakLevel;
     public GameObject carriedItem;
     public Transform spawnPoint;
 
@@ -34,12 +35,15 @@ public class BreakTile : MonoBehaviour
         }
     }
 
-    public void MineDamage(float incDamage)
+    public void MineDamage(float incDamage, int inBreakLevel)
     {
-        currentHealth -= incDamage * Time.deltaTime;
-        if (currentHealth <= 0)
+        if(inBreakLevel >= breakLevel)
         {
-            DestroyThis();
+            currentHealth -= incDamage * Time.deltaTime;
+            if (currentHealth <= 0)
+            {
+                DestroyThis();
+            }
         }
     }
 
