@@ -2,23 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GroundEnemy : MonoBehaviour
+public class FlyEnemy : MonoBehaviour
 {
-
     public EnemyStats myStats;
 
     public Transform playerLocation;
     public bool hasLOS;
     public LayerMask ignoreEnemyLayer;
     public LayerMask groundLayer;
-    public bool isGrounded;
 
     public float hitstunMulti;
 
     public Rigidbody2D myRB;
-    public Transform groundCheck;
     public Transform attackCheck;
-    public Transform jumpCheck;
 
     public enum enemyState
     {
@@ -41,6 +37,9 @@ public class GroundEnemy : MonoBehaviour
 
     public Coroutine actionCoroutine;
 
+
+
+    // Start is called before the first frame update
     void Start()
     {
         myStats = GetComponent<EnemyStats>();
@@ -50,7 +49,8 @@ public class GroundEnemy : MonoBehaviour
         playerLocation = FindObjectOfType<PlayerStats>().transform;
     }
 
-    private void Update()
+    // Update is called once per frame
+    void Update()
     {
         if (!waitIdleSound)
         {
@@ -60,25 +60,22 @@ public class GroundEnemy : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-
-
-        if(myStats.getHealth() == 0)
+        if (myStats.getHealth() == 0)
         {
             myState = enemyState.Death;
             StartCoroutine(waitDie(1.5f));
             myAnim.SetTrigger("Die");
         }
 
+
         checkLOS();
-        isGrounded = checkGround();
 
         switch (myState)
         {
             case enemyState.Asleep:
-                if(hasLOS == true)
+                if (hasLOS == true)
                 {
                     myState = enemyState.Movement;
                     PlayClip(0);
@@ -87,16 +84,15 @@ public class GroundEnemy : MonoBehaviour
                 return;
             case enemyState.Movement:
                 Flip();
-                GroundMove();
-                checkJump();
-                myAnim.SetFloat("Speed", Mathf.Abs(myRB.velocity.x));
+                AirMove();
+                myAnim.SetFloat("Speed", Mathf.Abs(myRB.velocity.magnitude));
 
                 if (checkAttack())
                 {
                     myState = enemyState.Attack;
                     myAnim.SetTrigger("Attack");
                     PlayClip(0);
-                    actionCoroutine = StartCoroutine(waitForAttack(1.35f));
+                    actionCoroutine = StartCoroutine(waitForAttack(1.850f));
                 }
                 return;
             case enemyState.Attack:
@@ -111,24 +107,28 @@ public class GroundEnemy : MonoBehaviour
                     StartCoroutine(waitExplode(explosionDelay));
                 }
                 return;
-
         }
-
     }
 
-    private void GroundMove()
+    private void AirMove()
     {
-        if (!isGrounded)
+        //if we are on the left
+
+        Vector2 destination = new Vector2();
+        if(transform.position.x < playerLocation.transform.position.x)
         {
-            float airSpeed = myStats.speed / 3f;
-            myRB.AddForce(new Vector2(airSpeed * Mathf.Clamp((playerLocation.transform.position.x - transform.position.x), -1f, 1f) * 100 * Time.deltaTime, 0), ForceMode2D.Force);
+            destination = new Vector2(playerLocation.transform.position.x - 1, playerLocation.transform.position.y);
         }
-        else myRB.AddForce(new Vector2(myStats.speed * Mathf.Clamp((playerLocation.transform.position.x - transform.position.x), -1f, 1f) * 100 * Time.deltaTime, 0), ForceMode2D.Force);
+        else
+        {
+            destination = new Vector2(playerLocation.transform.position.x + 1, playerLocation.transform.position.y);
+        }
+
+        myRB.AddForce((destination - new Vector2(transform.position.x, transform.position.y)).normalized * myStats.speed, ForceMode2D.Force);
     }
 
     public void Flip()
     {
-
         Transform spriteTransform = transform;
         if (myRB.velocity.x > 0.1)
         {
@@ -143,13 +143,21 @@ public class GroundEnemy : MonoBehaviour
             spriteTransform.localScale = myScale;
         }
     }
-
-
     public bool checkLOS()
     {
-        
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(playerLocation.position.x - transform.position.x, playerLocation.position.y - transform.position.y), 10f, ~ignoreEnemyLayer);
+        LayerMask layermaskToCheck;
+
+        if (myState != enemyState.Asleep)
+        {
+            layermaskToCheck = LayerMask.GetMask("Enemy", "EnemyHitbox", "Terrain", "PlayerHitbox", "Pickup");
+        }
+
+        else layermaskToCheck = ignoreEnemyLayer;
+
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(playerLocation.position.x - transform.position.x, playerLocation.position.y - transform.position.y), 10f, ~layermaskToCheck);
         //Debug.Log(hit.transform.name);
+
         if (hit.transform.name == "Player")
         {
             hasLOS = true;
@@ -161,39 +169,14 @@ public class GroundEnemy : MonoBehaviour
             myAudio.volume = 0.5f;
         }
 
-
         return hasLOS;
     }
-
-    private bool checkGround()
-    {
-        bool ground = Physics2D.BoxCast(groundCheck.position, new Vector2(.66f, 0.12f), 0, new Vector2(0f, 0f), 0, groundLayer);
-        return ground;
-    }
-
-    private bool checkJump()
-    {
-        bool Jump = false;
-        bool jumpUp = Physics2D.BoxCast(jumpCheck.position, new Vector2(.30f, .30f), 90f, new Vector2(jumpCheck.localPosition.x, jumpCheck.localPosition.y), 0f, groundLayer);
-
-        Debug.Log(jumpUp.ToString());
-        if (jumpUp && isGrounded)
-        {
-            myRB.AddForce(new Vector2(0, 1 * myStats.jumpHeight), ForceMode2D.Impulse);
-        }
-
-
-
-        return Jump;
-    }
-
     private bool checkAttack()
     {
         bool isAttack = Physics2D.BoxCast(attackCheck.position, new Vector2(.50f, .75f), 90f, new Vector2(attackCheck.localPosition.x, attackCheck.localPosition.y), 0f, ~LayerMask.GetMask("Enemy", "EnemyHitbox", "Terrain", "PlayerHitbox", "Pickup"));
 
         return isAttack;
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("PlayerAttack") && myState != enemyState.Death)
@@ -224,48 +207,50 @@ public class GroundEnemy : MonoBehaviour
         }
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (myState != enemyState.Asleep && !collision.transform.CompareTag("Player"))
+        {
+            Physics2D.IgnoreCollision(collision.collider, collision.otherCollider);
+        }
+    }
+
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        if (myState != enemyState.Asleep && !collision.transform.CompareTag("Player"))
+        {
+            Physics2D.IgnoreCollision(collision.collider, collision.otherCollider);
+        }
+    }
     IEnumerator waitForHitstun(float time)
     {
         yield return new WaitForSeconds(time);
         myState = enemyState.Movement;
     }
-
     IEnumerator waitForAttack(float time)
     {
         yield return new WaitForSeconds(time);
         myState = enemyState.Movement;
     }
-
     IEnumerator waitDie(float time)
     {
         yield return new WaitForSeconds(time);
         Destroy(transform.gameObject);
     }
-
     IEnumerator waitIdle(float time)
     {
         yield return new WaitForSeconds(time);
         waitIdleSound = false;
         PlayClip(1);
     }
-
     IEnumerator waitExplode(float time)
     {
         yield return new WaitForSeconds(time);
         waitExplosion = false;
-
     }
-
     private void PlayClip(int clipIndex)
     {
         AudioClip inClip = myClips[clipIndex];
         myAudio.PlayOneShot(inClip);
-    }
-
-    private void OnDrawGizmos()
-    {
-        //Gizmos.DrawCube(groundCheck.position, new Vector2(.68f, 0.12f));
-        //Gizmos.DrawCube(new Vector3(attackCheck.position.x, attackCheck.position.y, 0), new Vector3(.50f, .75f, 1f));
-        //Gizmos.DrawCube(jumpCheck.position, new Vector2(.30f, .30f));
     }
 }

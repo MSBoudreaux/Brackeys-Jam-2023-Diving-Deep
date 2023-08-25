@@ -214,9 +214,24 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.transform.CompareTag("Pickup"))
         {
+
+            PickupItem inPickup;
+            bool isProjectile = false;
             Debug.Log("picking up!");
-            PickupItem inPickup = collision.transform.GetComponent<PickupItem>();
-            if(inPickup.myStat == PickupItem.PickupBoost.AngyMode)
+            if (collision.transform.GetComponent<PickupItem>())
+            {
+                inPickup = collision.transform.GetComponent<PickupItem>();
+
+            }
+            else 
+            {
+            inPickup = collision.transform.GetComponentInParent<PickupItem>();
+                isProjectile = true;
+
+            }
+
+
+            if (inPickup.myStat == PickupItem.PickupBoost.AngyMode)
             {
                 PlayClip(9);
             }
@@ -233,7 +248,14 @@ public class PlayerController : MonoBehaviour
                 PlayClip(8);
             }
             myStats.GetPowerup(inPickup.myStat, inPickup.value);
-            Destroy(collision.transform.gameObject);
+            if (isProjectile)
+            {
+                Destroy(collision.transform.parent.gameObject);
+            }
+            else
+            {
+                Destroy(collision.transform.gameObject);
+            }
         }
 
         else if (collision.transform.CompareTag("EnemyAttack") && myStats.isIFrames == false)
