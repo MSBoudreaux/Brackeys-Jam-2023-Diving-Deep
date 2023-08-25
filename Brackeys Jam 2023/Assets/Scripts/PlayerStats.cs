@@ -55,7 +55,7 @@ public class PlayerStats : MonoBehaviour
 
         myLight.pointLightInnerRadius = lightRange;
         myLight.pointLightOuterRadius = lightRange + 1f;
-        myLight.intensity = 1.7f + (lightRange / 10f);
+        myLight.intensity = 1f + (lightRange / 10f);
 
         //update UI
         hpBar.value = currentHealth;

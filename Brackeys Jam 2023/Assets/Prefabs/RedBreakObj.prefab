@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2953577761088760964}
   - component: {fileID: 8058438326373086243}
   - component: {fileID: 6030508237473779996}
-  - component: {fileID: -3798170283549156279}
   m_Layer: 3
   m_Name: RedBreakObj
   m_TagString: Breakable
@@ -218,33 +217,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-3798170283549156279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2895199293370778372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_ComponentVersion: 1
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 0
-  m_CastsShadows: 1
-  m_SelfShadows: 1
-  m_ApplyToSortingLayers: 00000000
-  m_ShapePath:
-  - {x: -0.31999993, y: -0.32, z: 0}
-  - {x: -0.31999993, y: 0.32000005, z: 0}
-  - {x: 0.31999993, y: 0.32000005, z: 0}
-  - {x: 0.31999993, y: -0.32, z: 0}
-  m_ShapePathHash: 0
-  m_Mesh: {fileID: 0}
-  m_InstanceId: -241318
 --- !u!1 &4178994875707391503
 GameObject:
   m_ObjectHideFlags: 0

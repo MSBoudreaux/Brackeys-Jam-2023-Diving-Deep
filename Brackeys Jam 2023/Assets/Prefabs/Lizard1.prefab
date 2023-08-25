@@ -209,7 +209,6 @@ GameObject:
   - component: {fileID: 2556512449774029937}
   - component: {fileID: 3231778821601082579}
   - component: {fileID: 3096805905854721954}
-  - component: {fileID: 7366355918215383536}
   m_Layer: 7
   m_Name: EnemySprite
   m_TagString: Untagged
@@ -310,33 +309,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2200424, y: 0.19004394}
   m_EdgeRadius: 0
---- !u!114 &7366355918215383536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5815831537450320049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_ComponentVersion: 1
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 1
-  m_ApplyToSortingLayers: 00000000
-  m_ShapePath:
-  - {x: -0.16000003, y: -0.16, z: 0}
-  - {x: -0.16000003, y: 0.16, z: 0}
-  - {x: 0.15999997, y: 0.16, z: 0}
-  - {x: 0.15999997, y: -0.16, z: 0}
-  m_ShapePathHash: 0
-  m_Mesh: {fileID: 0}
-  m_InstanceId: -775062
 --- !u!1 &7660785894249039459
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   damage: 2
-  speed: 20
+  speed: 25
   jumpHeight: 50
 --- !u!95 &8589379955104189574
 Animator:

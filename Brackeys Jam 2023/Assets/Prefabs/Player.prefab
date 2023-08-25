@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
+  m_RenderShadows: 0
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
@@ -2672,7 +2672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelQuotas:
-  - 0
+  - 1600
   - 0
   - 0
   - 0
@@ -3305,7 +3305,6 @@ GameObject:
   - component: {fileID: 1245270212138591310}
   - component: {fileID: 4272547458031579257}
   - component: {fileID: 3879817929082523501}
-  - component: {fileID: 1845905694183767187}
   m_Layer: 0
   m_Name: Square
   m_TagString: Player
@@ -3410,19 +3409,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.0044750506, y: 0.0502834}
-      - {x: -0.06931693, y: 0.04211923}
-      - {x: -0.066016465, y: -0.13688728}
-      - {x: -0.06387439, y: -0.14600846}
-      - {x: -0.062340334, y: -0.14971453}
-      - {x: -0.05565378, y: -0.15753476}
+    - - {x: 0.069739446, y: 0.049908314}
+      - {x: -0.069692045, y: 0.049995963}
+      - {x: -0.07009311, y: -0.14373407}
+      - {x: -0.06642925, y: -0.15106723}
+      - {x: -0.061153647, y: -0.15590051}
+      - {x: -0.056102287, y: -0.15910466}
       - {x: -0.050060853, y: -0.16007479}
       - {x: 0.059855133, y: -0.16}
       - {x: 0.06581729, y: -0.15867767}
-      - {x: 0.07045534, y: -0.15637831}
-      - {x: 0.07454905, y: -0.15169148}
-      - {x: 0.07645392, y: -0.14631912}
-      - {x: 0.0793462, y: 0.041238956}
+      - {x: 0.07019471, y: -0.15742087}
+      - {x: 0.07689481, y: -0.15169148}
+      - {x: 0.079796426, y: -0.146062}
+      - {x: 0.079721294, y: 0.04986585}
 --- !u!81 &3879817929082523501
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3431,33 +3430,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7946081207954425601}
   m_Enabled: 1
---- !u!114 &1845905694183767187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7946081207954425601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_ComponentVersion: 1
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000
-  m_ShapePath:
-  - {x: -0.15999997, y: -0.16000001, z: 0}
-  - {x: -0.15999997, y: 0.16, z: 0}
-  - {x: 0.16000003, y: 0.16, z: 0}
-  - {x: 0.16000003, y: -0.16000001, z: 0}
-  m_ShapePathHash: 0
-  m_Mesh: {fileID: 0}
-  m_InstanceId: 81100
 --- !u!1 &7991371411313589729
 GameObject:
   m_ObjectHideFlags: 0
