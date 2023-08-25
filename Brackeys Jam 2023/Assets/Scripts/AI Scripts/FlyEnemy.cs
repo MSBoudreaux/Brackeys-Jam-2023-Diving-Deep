@@ -173,7 +173,7 @@ public class FlyEnemy : MonoBehaviour
     }
     private bool checkAttack()
     {
-        bool isAttack = Physics2D.BoxCast(attackCheck.position, new Vector2(.50f, .75f), 90f, new Vector2(attackCheck.localPosition.x, attackCheck.localPosition.y), 0f, ~LayerMask.GetMask("Enemy", "EnemyHitbox", "Terrain", "PlayerHitbox", "Pickup"));
+        bool isAttack = Physics2D.BoxCast(attackCheck.position, new Vector2(.50f, .75f), 90f, new Vector2(attackCheck.localPosition.x, attackCheck.localPosition.y), 0f, ~LayerMask.GetMask("Enemy", "EnemyHitbox", "Terrain", "PlayerHitbox", "Pickup", "LevelEnd"));
 
         return isAttack;
     }

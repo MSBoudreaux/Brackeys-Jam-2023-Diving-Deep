@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     public float iFrameTime;
 
     public float score;
+    public float myQuota;
 
     //action stats: attack , damage, mining speed, light
     public int atkDamage;
@@ -35,10 +36,16 @@ public class PlayerStats : MonoBehaviour
     public TextMeshProUGUI rangeNumber;
     public TextMeshProUGUI lightNumber;
     public TextMeshProUGUI digLevel;
+    public TextMeshProUGUI scoreNumber;
+    public TextMeshProUGUI quotaNumber;
     public TextMeshProUGUI rageTimer;
+
+    public TextMeshProUGUI textPopup;
+
 
     void Start()
     {
+
     }
 
     void Update()
@@ -48,6 +55,7 @@ public class PlayerStats : MonoBehaviour
 
         myLight.pointLightInnerRadius = lightRange;
         myLight.pointLightOuterRadius = lightRange + 1f;
+        myLight.intensity = 1.7f + (lightRange / 10f);
 
         //update UI
         hpBar.value = currentHealth;
@@ -57,6 +65,12 @@ public class PlayerStats : MonoBehaviour
         rangeNumber.text = range.ToString();
         lightNumber.text = (lightRange - 1).ToString();
         digLevel.text = breakLevel.ToString();
+        scoreNumber.text = score.ToString();
+        if (score >= myQuota)
+        {
+            quotaNumber.text = "Quota Met!";
+        }
+        else quotaNumber.text = myQuota.ToString();
     }
 
     public void addHealth(int inHP)
@@ -104,7 +118,10 @@ public class PlayerStats : MonoBehaviour
                 breakSpeed += inValue;
                 return;
             case PickupItem.PickupBoost.Light:
-                lightRange = inValue;
+                if(inValue > lightRange)
+                {
+                    lightRange = inValue;
+                }
 
                 /*if(lightRange == 3)
                 {
@@ -129,6 +146,12 @@ public class PlayerStats : MonoBehaviour
 
         }
 
+    }
+
+    public IEnumerator popupTextWait (float time)
+    {
+        yield return new WaitForSeconds(time);
+        textPopup.text = "";
     }
 
     IEnumerator iFrames(float time)

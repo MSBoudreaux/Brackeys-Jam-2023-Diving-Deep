@@ -36,14 +36,14 @@ public class PlayerController : MonoBehaviour
     public bool whichAmbience;
     public float ambienceDelay;
 
-
     public enum PlayerState
     {
         FreeMovement,
         Jumping, 
         Attacking,
         Hitstun,
-        Dead
+        Dead,
+        Win
     }
 
     public PlayerState state;
@@ -65,6 +65,16 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(ambienceTimer(ambienceDelay));
         }
 
+        if (myStats.currentHealth <= 0 && state != PlayerState.Dead)
+        {
+            state = PlayerState.Dead;
+            myAnim.SetTrigger("Kill");
+            PlayClip(11);
+            StartCoroutine(waitLevelDed(3.85f));
+        }
+
+
+
         switch (state)
         {
             case PlayerState.FreeMovement:
@@ -82,6 +92,12 @@ public class PlayerController : MonoBehaviour
 
             case PlayerState.Attacking:
                 ActionInput();
+                return;
+            case PlayerState.Hitstun:
+                return;
+            case PlayerState.Dead:
+                return;
+            case PlayerState.Win:
                 return;
         }
 
@@ -258,7 +274,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        else if (collision.transform.CompareTag("EnemyAttack") && myStats.isIFrames == false)
+        else if (collision.transform.CompareTag("EnemyAttack") && myStats.isIFrames == false && state != PlayerState.Dead)
         {
             Debug.Log("player hit");
             Transform inHitboxPos = collision.transform.parent.transform;
@@ -275,8 +291,42 @@ public class PlayerController : MonoBehaviour
             myStats.addHealth(-incStats.damage);
 
         }
+
+        else if (collision.transform.CompareTag("LevelEnd"))
+        {
+            myStats.textPopup.gameObject.SetActive(true);
+
+            if(myStats.score >= myStats.myQuota)
+            {
+                state = PlayerState.Win;
+                PlayClip(10);
+                myAnim.SetTrigger("Win");
+                StartCoroutine(waitLevelEnd(3.85f));
+            }
+            else
+            {
+                myStats.textPopup.text = "Quota not met!";
+                StartCoroutine(myStats.popupTextWait(3f));
+            }
+
+        }
     }
 
+    IEnumerator waitLevelEnd(float time)
+    {
+        yield return new WaitForSeconds(time);
+        LevelManager myMan = FindObjectOfType<LevelManager>();
+        myMan.LoadNewScene(myMan.mySceneIndex + 1);
+    }
+
+    IEnumerator waitLevelDed(float time)
+    {
+        yield return new WaitForSeconds(time);
+        LevelManager myMan = FindObjectOfType<LevelManager>();
+        myMan.ReloadScene();
+
+
+    }
     IEnumerator waitForHitstun(float time)
     {
         yield return new WaitForSeconds(time);

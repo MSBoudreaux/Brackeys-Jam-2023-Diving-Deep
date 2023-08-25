@@ -9,6 +9,7 @@ TagManager:
   - Breakable
   - EnemyAttack
   - PlayerAttack
+  - LevelEnd
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - EnemyHitbox
   - Pickup
   - Enemy
-  - 
+  - LevelEnd
   - 
   - 
   - 

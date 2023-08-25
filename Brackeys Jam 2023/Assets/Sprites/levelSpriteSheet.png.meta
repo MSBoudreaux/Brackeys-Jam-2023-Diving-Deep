@@ -1553,6 +1553,216 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71eedc480e41e484fbb684b758fc232f
+      internalID: 1452416437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09fa021851871524b874a63f4ed3a71e
+      internalID: 663229926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_71
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec32190f449526543ad7ceff98273a04
+      internalID: -32044516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_72
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41249d5450592b644ab12feb107e041c
+      internalID: 1856244372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_73
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05477ce9444756a4685cc624148bed1e
+      internalID: -1276335205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68ce98e3ae8da9b41b254ebbdaaddf27
+      internalID: 2122887692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_75
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf7332802104ff4c918836f54ee9628
+      internalID: -1638207836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_76
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 032fba7fb5e48e34192e8fac4f772132
+      internalID: -552015406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_77
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1209d354b10baab44af772b2a69a4375
+      internalID: 2085752888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_78
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5908b101aa63f4da6639d3252d1c06
+      internalID: 1487014340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1568,14 +1778,17 @@ TextureImporter:
       levelSpriteSheet_15: 1935739763
       levelSpriteSheet_52: 471451348
       levelSpriteSheet_66: 1017463629
+      levelSpriteSheet_69: 1452416437
       levelSpriteSheet_16: 11977174
       levelSpriteSheet_20: -1196511633
+      levelSpriteSheet_76: -552015406
       levelSpriteSheet_36: 767740396
       levelSpriteSheet_54: -1019688913
       levelSpriteSheet_1: -243148437
       levelSpriteSheet_45: -1172261662
       levelSpriteSheet_46: -1374951112
       levelSpriteSheet_47: -1816803572
+      levelSpriteSheet_74: 2122887692
       levelSpriteSheet_50: -484073081
       levelSpriteSheet_35: -1698644956
       levelSpriteSheet_29: -343906258
@@ -1595,6 +1808,7 @@ TextureImporter:
       levelSpriteSheet_58: 1917766824
       levelSpriteSheet_30: -1260293304
       levelSpriteSheet_38: 300152526
+      levelSpriteSheet_75: -1638207836
       levelSpriteSheet_68: 1508250744
       levelSpriteSheet_37: 225861712
       levelSpriteSheet_5: -521034123
@@ -1605,11 +1819,14 @@ TextureImporter:
       levelSpriteSheet_42: 171704305
       levelSpriteSheet_2: 1779526283
       levelSpriteSheet_34: 1666884989
+      levelSpriteSheet_70: 663229926
       levelSpriteSheet_63: -226076914
       levelSpriteSheet_19: 284882081
       levelSpriteSheet_49: 1810193013
       levelSpriteSheet_25: -1675232519
       levelSpriteSheet_48: 499816828
+      levelSpriteSheet_72: 1856244372
+      levelSpriteSheet_77: 2085752888
       levelSpriteSheet_10: 477326456
       levelSpriteSheet_32: -328297930
       levelSpriteSheet_14: -1914781670
@@ -1620,12 +1837,15 @@ TextureImporter:
       levelSpriteSheet_65: -360819693
       levelSpriteSheet_27: 1843275653
       levelSpriteSheet_59: 403445488
+      levelSpriteSheet_73: -1276335205
       levelSpriteSheet_22: 1674061346
       levelSpriteSheet_7: 1084620587
+      levelSpriteSheet_78: 1487014340
       levelSpriteSheet_6: -1720307090
       levelSpriteSheet_13: -1512540154
       levelSpriteSheet_18: 1348300642
       levelSpriteSheet_24: 585154847
+      levelSpriteSheet_71: -32044516
       levelSpriteSheet_11: -686093334
       levelSpriteSheet_39: -363775299
       levelSpriteSheet_21: -2006863300

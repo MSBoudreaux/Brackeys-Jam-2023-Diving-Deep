@@ -174,9 +174,9 @@ public class GroundEnemy : MonoBehaviour
     private bool checkJump()
     {
         bool Jump = false;
-        bool jumpUp = Physics2D.BoxCast(jumpCheck.position, new Vector2(.30f, .30f), 90f, new Vector2(jumpCheck.localPosition.x, jumpCheck.localPosition.y), 0f, groundLayer);
+        bool jumpUp = Physics2D.BoxCast(jumpCheck.position, new Vector2(.30f * transform.localScale.x, .30f * transform.localScale.y), 90f, new Vector2(jumpCheck.localPosition.x, jumpCheck.localPosition.y), 0f, groundLayer);
 
-        Debug.Log(jumpUp.ToString());
+        //Debug.Log(jumpUp.ToString());
         if (jumpUp && isGrounded)
         {
             myRB.AddForce(new Vector2(0, 1 * myStats.jumpHeight), ForceMode2D.Impulse);
@@ -189,7 +189,7 @@ public class GroundEnemy : MonoBehaviour
 
     private bool checkAttack()
     {
-        bool isAttack = Physics2D.BoxCast(attackCheck.position, new Vector2(.50f, .75f), 90f, new Vector2(attackCheck.localPosition.x, attackCheck.localPosition.y), 0f, ~LayerMask.GetMask("Enemy", "EnemyHitbox", "Terrain", "PlayerHitbox", "Pickup"));
+        bool isAttack = Physics2D.BoxCast(attackCheck.position, new Vector2(.50f, .75f), 90f, new Vector2(attackCheck.localPosition.x, attackCheck.localPosition.y), 0f, ~LayerMask.GetMask("Enemy", "EnemyHitbox", "Terrain", "PlayerHitbox", "Pickup", "LevelEnd"));
 
         return isAttack;
     }
