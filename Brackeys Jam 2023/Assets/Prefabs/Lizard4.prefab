@@ -216,7 +216,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4888218644949842944}
   attackCheck: {fileID: 6491435381471639357}
   jumpCheck: {fileID: 5668890983626762813}
-  jumpCheckF: {fileID: 0}
+  jumpCheckF: {fileID: 5668890983626762813}
   jumpCheckB: {fileID: 0}
   myState: 0
   myAnim: {fileID: 0}
@@ -280,7 +280,7 @@ Rigidbody2D:
   m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c212878615d067d4b9721df0c1f0957b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

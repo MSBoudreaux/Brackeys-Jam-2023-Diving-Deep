@@ -2674,7 +2674,7 @@ MonoBehaviour:
   levelQuotas:
   - 1600
   - 1700
-  - 0
+  - 7500
   - 0
   myStats: {fileID: 0}
   mySceneIndex: 0

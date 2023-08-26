@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1Moss.unity
     guid: 868ba3094a5bc3845beadf8350b8eead
   - enabled: 1
+    path: Assets/Scenes/Level2City.unity
+    guid: af8fbc57aa2915948a6051860065a8a4
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects: {}

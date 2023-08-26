@@ -211,12 +211,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   isGrounded: 0
-  hitstunMulti: 25
+  hitstunMulti: 75
   myRB: {fileID: 0}
   groundCheck: {fileID: 4722197208060639954}
   attackCheck: {fileID: 6361576040311189999}
   jumpCheck: {fileID: 5545373642568396015}
-  jumpCheckF: {fileID: 0}
+  jumpCheckF: {fileID: 6361576040311189999}
   jumpCheckB: {fileID: 0}
   myState: 0
   myAnim: {fileID: 0}
@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f07f1042ebc784f8ce8f3b1d91cd7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 20
   damage: 4
-  speed: 40
+  speed: 30
   jumpHeight: 50
 --- !u!95 &2174363577170653841
 Animator:
@@ -280,7 +280,7 @@ Rigidbody2D:
   m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c212878615d067d4b9721df0c1f0957b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

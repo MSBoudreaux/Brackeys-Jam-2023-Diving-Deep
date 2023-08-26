@@ -152,7 +152,7 @@ public class GroundEnemy : MonoBehaviour
     {
         
         RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(playerLocation.position.x - transform.position.x, playerLocation.position.y - transform.position.y), 10f, ~ignoreEnemyLayer);
-        //Debug.Log(hit.transform.name);
+        Debug.Log(transform.name + "sees: " + hit.transform.name);
         if (hit.transform.name == "Player")
         {
             hasLOS = true;

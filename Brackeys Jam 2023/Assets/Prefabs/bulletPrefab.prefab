@@ -167,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myStat: 0
   value: 0
+  isPickedUp: 0
 --- !u!50 &2144050000
 Rigidbody2D:
   serializedVersion: 4
