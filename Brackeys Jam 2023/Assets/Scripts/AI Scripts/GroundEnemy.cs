@@ -68,7 +68,7 @@ public class GroundEnemy : MonoBehaviour
     {
 
 
-        if(myStats.getHealth() == 0)
+        if(myStats.getHealth() <= 0)
         {
             myState = enemyState.Death;
             StartCoroutine(waitDie(1.5f));
@@ -183,7 +183,7 @@ public class GroundEnemy : MonoBehaviour
         RaycastHit2D jumpUp = Physics2D.Raycast(transform.position, new Vector2(jumpCheck.position.x - transform.position.x, jumpCheck.position.y - transform.position.y), .5f, ~ignoreEnemyLayer);
         Debug.Log(jumpUp.transform.gameObject.name);
 
-        if (jumpUp && isGrounded)
+        if (jumpUp && isGrounded && jumpUp.transform.gameObject.name != "Player")
         {
             myRB.AddForce(new Vector2(0, 1 * myStats.jumpHeight), ForceMode2D.Impulse);
         }

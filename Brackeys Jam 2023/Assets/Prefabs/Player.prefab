@@ -2673,7 +2673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelQuotas:
   - 1600
-  - 0
+  - 1700
   - 0
   - 0
   myStats: {fileID: 0}

@@ -96,8 +96,10 @@ public class PlayerController : MonoBehaviour
             case PlayerState.Hitstun:
                 return;
             case PlayerState.Dead:
+                rb.drag = 30f;
                 return;
             case PlayerState.Win:
+                rb.drag = 30f;
                 return;
         }
 
@@ -179,7 +181,10 @@ public class PlayerController : MonoBehaviour
         else finalSpeed = speed;
 
 
-        rb.AddForce(new Vector2(finalSpeed * moveX * 100 * Time.deltaTime, 0), ForceMode2D.Force);
+        if (state == PlayerState.FreeMovement)
+        {
+            rb.AddForce(new Vector2(finalSpeed * moveX * 100 * Time.deltaTime, 0), ForceMode2D.Force);
+        }
 
         if (toJump && isGrounded)
         {
@@ -228,10 +233,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.CompareTag("Pickup"))
+        if (collision.transform.CompareTag("Pickup") && !transform.CompareTag("PlayerAttack"))
         {
 
             PickupItem inPickup;
+
             bool isProjectile = false;
             Debug.Log("picking up!");
             if (collision.transform.GetComponent<PickupItem>())
@@ -241,37 +247,45 @@ public class PlayerController : MonoBehaviour
             }
             else 
             {
+
             inPickup = collision.transform.GetComponentInParent<PickupItem>();
-                isProjectile = true;
+            isProjectile = true;
 
             }
 
+            if(inPickup.isPickedUp == false)
+            {
+                inPickup.isPickedUp = true;
 
-            if (inPickup.myStat == PickupItem.PickupBoost.AngyMode)
-            {
-                PlayClip(9);
+                if (inPickup.myStat == PickupItem.PickupBoost.AngyMode)
+                {
+                    PlayClip(9);
+                }
+                else if (inPickup.myStat == PickupItem.PickupBoost.Health && inPickup.value < 0)
+                {
+                    PlayClip(1);
+                }
+                else if (inPickup.myStat == PickupItem.PickupBoost.Score)
+                {
+                    PlayClip(7);
+                }
+                else
+                {
+                    PlayClip(8);
+                }
+                myStats.GetPowerup(inPickup.myStat, inPickup.value);
+                if (isProjectile)
+                {
+                    Destroy(collision.transform.parent.gameObject);
+                }
+                else
+                {
+                    Destroy(collision.transform.gameObject);
+                }
             }
-            else if(inPickup.myStat == PickupItem.PickupBoost.Health && inPickup.value < 0)
-            {
-                PlayClip(1);
-            }
-            else if(inPickup.myStat == PickupItem.PickupBoost.Score)
-            {
-                PlayClip(7);
-            }
-            else
-            {
-                PlayClip(8);
-            }
-            myStats.GetPowerup(inPickup.myStat, inPickup.value);
-            if (isProjectile)
-            {
-                Destroy(collision.transform.parent.gameObject);
-            }
-            else
-            {
-                Destroy(collision.transform.gameObject);
-            }
+
+
+
         }
 
         else if (collision.transform.CompareTag("EnemyAttack") && myStats.isIFrames == false && state != PlayerState.Dead)

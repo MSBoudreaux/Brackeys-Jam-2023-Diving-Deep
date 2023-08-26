@@ -69,7 +69,7 @@ public class ShootEnemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (myStats.getHealth() == 0)
+        if (myStats.getHealth() <= 0)
         {
             myState = enemyState.Death;
             StartCoroutine(waitDie(1.5f));

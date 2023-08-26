@@ -19,4 +19,5 @@ public class PickupItem : MonoBehaviour
 
     public PickupBoost myStat;
     public int value;
+    public bool isPickedUp;
 }
