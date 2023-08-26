@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
             state = PlayerState.Dead;
             myAnim.SetTrigger("Kill");
             PlayClip(11);
-            StartCoroutine(waitLevelDed(3.85f));
+            StartCoroutine(waitLevelDed(3.6f));
         }
 
 
@@ -333,10 +333,8 @@ public class PlayerController : MonoBehaviour
         state = PlayerState.FreeMovement;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
 
-    }
+
 
     private bool checkGround()
     {

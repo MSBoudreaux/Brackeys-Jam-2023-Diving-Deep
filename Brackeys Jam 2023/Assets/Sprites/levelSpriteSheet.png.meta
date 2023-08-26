@@ -1763,6 +1763,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_79
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10e0511ae158d544ad97c8b513e3112
+      internalID: -2080042121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_80
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836064317fa43d64eaa6b2205b0974d3
+      internalID: 1233161180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelSpriteSheet_81
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e054c6cda57d38446b89313c6b00f022
+      internalID: -1763496844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1800,6 +1863,7 @@ TextureImporter:
       levelSpriteSheet_8: -1440104597
       levelSpriteSheet_23: -1193410488
       levelSpriteSheet_53: 766264985
+      levelSpriteSheet_81: -1763496844
       levelSpriteSheet_3: 767437309
       levelSpriteSheet_41: 84955975
       levelSpriteSheet_55: -988412004
@@ -1834,10 +1898,12 @@ TextureImporter:
       levelSpriteSheet_31: -459214460
       levelSpriteSheet_44: 539738479
       levelSpriteSheet_56: -1158381723
+      levelSpriteSheet_79: -2080042121
       levelSpriteSheet_65: -360819693
       levelSpriteSheet_27: 1843275653
       levelSpriteSheet_59: 403445488
       levelSpriteSheet_73: -1276335205
+      levelSpriteSheet_80: 1233161180
       levelSpriteSheet_22: 1674061346
       levelSpriteSheet_7: 1084620587
       levelSpriteSheet_78: 1487014340

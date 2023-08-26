@@ -1064,14 +1064,14 @@ MonoBehaviour:
   rb: {fileID: 2142735135878938067}
   myStats: {fileID: 689543995}
   speed: 10
-  jumpHeight: 6
+  jumpHeight: 7
   fallThreshold: 5
   fallSpeed: 1
   isGrounded: 0
   groundCheck: {fileID: 4599227728337688165}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 136
   myCam: {fileID: 92695394}
   ignoreHitboxLayer:
     serializedVersion: 2
@@ -1118,7 +1118,7 @@ MonoBehaviour:
   atkDamage: 1
   breakSpeed: 1
   range: 2
-  lightRange: 1
+  lightRange: 2
   breakLevel: 1
   isRage: 0
   stateAnim: {fileID: 1870391546840889216}
@@ -1167,10 +1167,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 3
+  m_LinearDrag: 4
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c212878615d067d4b9721df0c1f0957b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -2086,7 +2086,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5419573837282856916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.009, y: 0.057, z: 0}
+  m_LocalPosition: {x: 0.048, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2108,9 +2108,9 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 0.9616348, b: 0.8349056, a: 1}
-  m_Intensity: 1
+  m_FalloffIntensity: 0.476
+  m_Color: {r: 0.7169812, g: 0.64370483, b: 0.40922037, a: 1}
+  m_Intensity: 1.7
   m_LightVolumeIntensity: 0.03
   m_LightVolumeIntensityEnabled: 1
   m_ApplyToSortingLayers: 00000000
@@ -2168,10 +2168,10 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
+  - {x: -0.12682694, y: -0.20640051, z: 0}
+  - {x: 0.047253195, y: -0.20091268, z: 0}
+  - {x: 0.052740995, y: 0.041765317, z: 0}
+  - {x: -0.113107264, y: 0.036277477, z: 0}
 --- !u!1 &5546950532476408330
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,8 +3303,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8234023340829268369}
   - component: {fileID: 1245270212138591310}
-  - component: {fileID: 4272547458031579257}
   - component: {fileID: 3879817929082523501}
+  - component: {fileID: 7035088589220759540}
   m_Layer: 0
   m_Name: Square
   m_TagString: Player
@@ -3384,8 +3384,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &4272547458031579257
-PolygonCollider2D:
+--- !u!81 &3879817929082523501
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7946081207954425601}
+  m_Enabled: 1
+--- !u!70 &7035088589220759540
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3397,39 +3405,9 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.069739446, y: 0.049908314}
-      - {x: -0.069692045, y: 0.049995963}
-      - {x: -0.07009311, y: -0.14373407}
-      - {x: -0.06642925, y: -0.15106723}
-      - {x: -0.061153647, y: -0.15590051}
-      - {x: -0.056102287, y: -0.15910466}
-      - {x: -0.050060853, y: -0.16007479}
-      - {x: 0.059855133, y: -0.16}
-      - {x: 0.06581729, y: -0.15867767}
-      - {x: 0.07019471, y: -0.15742087}
-      - {x: 0.07689481, y: -0.15169148}
-      - {x: 0.079796426, y: -0.146062}
-      - {x: 0.079721294, y: 0.04986585}
---- !u!81 &3879817929082523501
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7946081207954425601}
-  m_Enabled: 1
+  m_Offset: {x: 0.005042474, y: -0.02402109}
+  m_Size: {x: 0.14857022, y: 0.26977944}
+  m_Direction: 0
 --- !u!1 &7991371411313589729
 GameObject:
   m_ObjectHideFlags: 0

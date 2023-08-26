@@ -203,6 +203,7 @@ MonoBehaviour:
   myStats: {fileID: 0}
   playerLocation: {fileID: 0}
   hasLOS: 0
+  isChasing: 0
   ignoreEnemyLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -215,6 +216,8 @@ MonoBehaviour:
   groundCheck: {fileID: 4722197208060639954}
   attackCheck: {fileID: 6361576040311189999}
   jumpCheck: {fileID: 5545373642568396015}
+  jumpCheckF: {fileID: 0}
+  jumpCheckB: {fileID: 0}
   myState: 0
   myAnim: {fileID: 0}
   myAudio: {fileID: 0}
@@ -338,7 +341,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -570,7 +573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2334277883847471903}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.564, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0.564, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

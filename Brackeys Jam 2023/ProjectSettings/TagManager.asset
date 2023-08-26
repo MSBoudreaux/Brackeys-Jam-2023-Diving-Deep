@@ -10,6 +10,7 @@ TagManager:
   - EnemyAttack
   - PlayerAttack
   - LevelEnd
+  - terrainJumpUpThrough
   layers:
   - Default
   - TransparentFX

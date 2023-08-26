@@ -9,6 +9,7 @@ public class GroundEnemy : MonoBehaviour
 
     public Transform playerLocation;
     public bool hasLOS;
+    public bool isChasing;
     public LayerMask ignoreEnemyLayer;
     public LayerMask groundLayer;
     public bool isGrounded;
@@ -19,6 +20,8 @@ public class GroundEnemy : MonoBehaviour
     public Transform groundCheck;
     public Transform attackCheck;
     public Transform jumpCheck;
+    public Transform jumpCheckF;
+    public Transform jumpCheckB;
 
     public enum enemyState
     {
@@ -120,7 +123,7 @@ public class GroundEnemy : MonoBehaviour
     {
         if (!isGrounded)
         {
-            float airSpeed = myStats.speed / 3f;
+            float airSpeed = myStats.speed / 1.5f;
             myRB.AddForce(new Vector2(airSpeed * Mathf.Clamp((playerLocation.transform.position.x - transform.position.x), -1f, 1f) * 100 * Time.deltaTime, 0), ForceMode2D.Force);
         }
         else myRB.AddForce(new Vector2(myStats.speed * Mathf.Clamp((playerLocation.transform.position.x - transform.position.x), -1f, 1f) * 100 * Time.deltaTime, 0), ForceMode2D.Force);
@@ -167,16 +170,19 @@ public class GroundEnemy : MonoBehaviour
 
     private bool checkGround()
     {
-        bool ground = Physics2D.BoxCast(groundCheck.position, new Vector2(.66f, 0.12f), 0, new Vector2(0f, 0f), 0, groundLayer);
+        bool ground = Physics2D.BoxCast(groundCheck.position, new Vector2(.33f, 0.12f), 0, new Vector2(0f, 0f), 0, groundLayer);
         return ground;
     }
 
     private bool checkJump()
     {
-        bool Jump = false;
-        bool jumpUp = Physics2D.BoxCast(jumpCheck.position, new Vector2(.30f * transform.localScale.x, .30f * transform.localScale.y), 90f, new Vector2(jumpCheck.localPosition.x, jumpCheck.localPosition.y), 0f, groundLayer);
+        //maybe change to a raycast?
 
-        //Debug.Log(jumpUp.ToString());
+        //RaycastHit2D jumpUp = Physics2D.BoxCast(jumpCheck.position, new Vector2(.30f * transform.localScale.x, .30f * transform.localScale.y), 90f, new Vector2(jumpCheck.localPosition.x, jumpCheck.localPosition.y), 0f, groundLayer);
+
+        RaycastHit2D jumpUp = Physics2D.Raycast(transform.position, new Vector2(jumpCheck.position.x - transform.position.x, jumpCheck.position.y - transform.position.y), .5f, ~ignoreEnemyLayer);
+        Debug.Log(jumpUp.transform.gameObject.name);
+
         if (jumpUp && isGrounded)
         {
             myRB.AddForce(new Vector2(0, 1 * myStats.jumpHeight), ForceMode2D.Impulse);
@@ -184,7 +190,7 @@ public class GroundEnemy : MonoBehaviour
 
 
 
-        return Jump;
+        return jumpUp;
     }
 
     private bool checkAttack()
@@ -221,6 +227,14 @@ public class GroundEnemy : MonoBehaviour
                 myRB.AddForce(new Vector2(playerLocation.position.x - transform.position.x, -(playerLocation.position.y - transform.position.y) * 15).normalized * incStats.atkDamage * -hitstunMulti, ForceMode2D.Impulse);
                 myStats.takeDamage(incStats);
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (myRB.velocity.y >= 0 && collision.transform.CompareTag("terrainJumpUpThrough"))
+        {
+            Physics2D.IgnoreCollision(transform.GetComponent<Collider2D>(), collision.collider);
         }
     }
 
@@ -264,6 +278,8 @@ public class GroundEnemy : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        Gizmos.DrawRay(new Ray(transform.position, new Vector2(jumpCheck.position.x - transform.position.x, jumpCheck.position.y - transform.position.y)));
+        Gizmos.DrawRay(new Ray(transform.position, new Vector2(playerLocation.position.x - transform.position.x, playerLocation.position.y - transform.position.y)));
         //Gizmos.DrawCube(groundCheck.position, new Vector2(.68f, 0.12f));
         //Gizmos.DrawCube(new Vector3(attackCheck.position.x, attackCheck.position.y, 0), new Vector3(.50f, .75f, 1f));
         //Gizmos.DrawCube(jumpCheck.position, new Vector2(.30f, .30f));
