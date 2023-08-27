@@ -362,9 +362,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96f07f1042ebc784f8ce8f3b1d91cd7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 99
+  maxHealth: 999
   damage: 4
-  speed: 15
+  speed: 35
   jumpHeight: 50
 --- !u!95 &2868054589332235982
 Animator:

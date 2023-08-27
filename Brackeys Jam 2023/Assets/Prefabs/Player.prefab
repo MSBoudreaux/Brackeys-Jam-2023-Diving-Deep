@@ -2672,10 +2672,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelQuotas:
-  - 1600
+  - 1100
   - 1700
   - 7500
-  - 0
+  - 15000
   myStats: {fileID: 0}
   mySceneIndex: 0
 --- !u!1 &6916207958142892433

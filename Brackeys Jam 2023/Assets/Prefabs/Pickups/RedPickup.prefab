@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myStat: 6
-  value: 1000
+  value: 10000
+  isPickedUp: 0
 --- !u!61 &8417083816460375503
 BoxCollider2D:
   m_ObjectHideFlags: 0
